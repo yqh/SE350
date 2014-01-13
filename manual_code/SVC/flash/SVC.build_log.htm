@@ -1,0 +1,31 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\HYQ\Git\os1\dev\p1_example\example\SVC\SVC.uvproj
+Project File Date:  04/09/2013
+
+<h2>Output:</h2>
+Build target 'SVC SIM'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+src\system_LPC17xx.c(25): error:  #5: cannot open source input file "LPC17xx.h": No such file or directory
+  #include "LPC17xx.h"
+src\system_LPC17xx.c: 0 warnings, 1 error
+compiling uart_polling.c...
+src\uart_polling.c(8): error:  #5: cannot open source input file "LPC17xx.h": No such file or directory
+  #include <LPC17xx.h>
+src\uart_polling.c: 0 warnings, 1 error
+compiling main_svc.c...
+src\main_svc.c(10): error:  #5: cannot open source input file "LPC17xx.h": No such file or directory
+  #include <LPC17xx.h>
+src\main_svc.c: 0 warnings, 1 error
+compiling rtx.c...
+compiling Retarget.c...
+compiling HAL.c...
+".\flash\SVC.axf" - 3 Error(s), 0 Warning(s).
+Target not created
+</pre>
+</body>
+</html>
