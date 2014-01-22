@@ -49,7 +49,7 @@ void memory_init(void)
 	U8 *p_end = (U8 *)&Image$$RW_IRAM1$$ZI$$Limit;
 	int i;
   
-	/* 8 bytes padding */
+	/* 4 bytes padding */
 	p_end += 32;
 
 	/* allocate memory for pcb pointers   */
@@ -64,7 +64,8 @@ void memory_init(void)
 	printf("gp_pcbs[0] = 0x%x \n", gp_pcbs[0]);
 	printf("gp_pcbs[1] = 0x%x \n", gp_pcbs[1]);
 #endif
-	/* allocate memory for stacks */
+	
+	/* prepare for alloc_stack() to allocate memory for stacks */
 	
 	gp_stack = (U32 *)RAM_END_ADDR;
 	if ((U32)gp_stack & 0x04) { /* 8 bytes alignment */
