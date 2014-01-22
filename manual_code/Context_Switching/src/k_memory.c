@@ -50,7 +50,7 @@ void memory_init(void)
 	int i;
   
 	/* 4 bytes padding */
-	p_end += 32;
+	p_end += 4;
 
 	/* allocate memory for pcb pointers   */
 	gp_pcbs = (PCB **)p_end;
