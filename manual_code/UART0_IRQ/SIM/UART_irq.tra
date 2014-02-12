@@ -1,0 +1,24 @@
+*** Creating Trace Output File '.\SIM\UART_irq.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '".\sim\startup_lpc17xx.o"'
+### List of Objects: adding '".\sim\uart_polling.o"'
+### List of Objects: adding '".\sim\uart_irq.o"'
+### List of Objects: adding '".\sim\system_lpc17xx.o"'
+### List of Objects: adding '".\sim\main_uart1_irq.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M3 ".\sim\startup_lpc17xx.o" ".\sim\uart_polling.o" ".\sim\uart_irq.o" ".\sim\system_lpc17xx.o" ".\sim\main_uart1_irq.o" 
+--strict --scatter ".\SIM\UART_irq.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\SIM\UART_irq.map" -o .\SIM\UART_irq.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: '.\SIM\UART_irq.axf'
+### ADS-LD Command File: '.\SIM\UART_irq.lnp'
+### Checking for dirty Components...
+### Creating CmdFile '.\SIM\UART_irq.lnp', Handle=0x000010C8
+### Writing '.lnp' file
+### ADS-LD Command file '.\SIM\UART_irq.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

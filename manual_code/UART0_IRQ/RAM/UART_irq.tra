@@ -1,0 +1,25 @@
+*** Creating Trace Output File '.\RAM\UART_irq.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '".\ram\startup_lpc17xx.o"'
+### List of Objects: adding '".\ram\uart_polling.o"'
+### List of Objects: adding '".\ram\uart_irq.o"'
+### List of Objects: adding '".\ram\system_lpc17xx.o"'
+### List of Objects: adding '".\ram\printf.o"'
+### List of Objects: adding '".\ram\main_irq.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M3 ".\ram\startup_lpc17xx.o" ".\ram\uart_polling.o" ".\ram\uart_irq.o" ".\ram\system_lpc17xx.o" ".\ram\printf.o" ".\ram\main_irq.o" 
+--strict --scatter ".\RAM\UART_irq.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\RAM\lst\UART_irq.map" -o .\RAM\UART_irq.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: '.\RAM\UART_irq.axf'
+### ADS-LD Command File: '.\RAM\UART_irq.lnp'
+### Checking for dirty Components...
+### Creating CmdFile '.\RAM\UART_irq.lnp', Handle=0x000005A0
+### Writing '.lnp' file
+### ADS-LD Command file '.\RAM\UART_irq.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

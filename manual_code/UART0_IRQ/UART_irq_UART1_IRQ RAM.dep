@@ -1,0 +1,6 @@
+Dependencies for Project 'UART_irq', Target 'UART1_IRQ RAM': (DO NOT MODIFY !)
+F (.\src\startup_LPC17xx.s)(0x51599117)(--cpu Cortex-M3 -g --apcs=interwork -I C:\Software\Keil\ARM\RV31\INC -I C:\Software\Keil\ARM\CMSIS\Include -I C:\Software\Keil\ARM\Inc\NXP\LPC17xx --list ".\RAM\lst\startup_LPC17xx.lst" --xref -o ".\RAM\startup_LPC17xx.o" --depend ".\RAM\startup_LPC17xx.d")
+F (.\src\uart_polling.c)(0x52FBE42B)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\Software\Keil\ARM\RV31\INC -I C:\Software\Keil\ARM\CMSIS\Include -I C:\Software\Keil\ARM\Inc\NXP\LPC17xx -DDEBUG_0 -o ".\RAM\uart_polling.o" --omf_browse ".\RAM\uart_polling.crf" --depend ".\RAM\uart_polling.d")
+F (.\src\uart_irq.c)(0x52FBE356)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\Software\Keil\ARM\RV31\INC -I C:\Software\Keil\ARM\CMSIS\Include -I C:\Software\Keil\ARM\Inc\NXP\LPC17xx -DDEBUG_0 -o ".\RAM\uart_irq.o" --omf_browse ".\RAM\uart_irq.crf" --depend ".\RAM\uart_irq.d")
+F (.\src\system_LPC17xx.c)(0x51599117)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\Software\Keil\ARM\RV31\INC -I C:\Software\Keil\ARM\CMSIS\Include -I C:\Software\Keil\ARM\Inc\NXP\LPC17xx -DDEBUG_0 -o ".\RAM\system_lpc17xx.o" --omf_browse ".\RAM\system_lpc17xx.crf" --depend ".\RAM\system_lpc17xx.d")
+F (.\src\main.c)(0x00000000)()
