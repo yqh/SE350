@@ -1,0 +1,30 @@
+*** Creating Trace Output File 'context_switching.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup_lpc17xx.o"'
+### List of Objects: adding '"system_lpc17xx.o"'
+### List of Objects: adding '"uart_polling.o"'
+### List of Objects: adding '"printf.o"'
+### List of Objects: adding '"main_svc.o"'
+### List of Objects: adding '"uart_irq.o"'
+### List of Objects: adding '"hal.o"'
+### List of Objects: adding '"k_rtx_init.o"'
+### List of Objects: adding '"k_memory.o"'
+### List of Objects: adding '"k_process.o"'
+### List of Objects: adding '"usr_proc.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M3 "startup_lpc17xx.o" "system_lpc17xx.o" "uart_polling.o" "printf.o" "main_svc.o" "uart_irq.o" "hal.o" "k_rtx_init.o" "k_memory.o" "k_process.o" "usr_proc.o" 
+--strict --scatter "context_switching.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\context_switching.map" -o context_switching.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'context_switching.axf'
+### ADS-LD Command File: 'context_switching.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'context_switching.lnp', Handle=0x00000448
+### Writing '.lnp' file
+### ADS-LD Command file 'context_switching.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

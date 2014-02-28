@@ -1,0 +1,11 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+P:\s\se350\code\manual_code\Context_Switching_UART\context_switching.uvproj
+Project File Date:  02/28/2014
+
+<h2>Output:</h2>
+Clean started: Project: 'context_switching'
+   deleting intermediate output files for target 'Context Switching SIM'

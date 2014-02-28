@@ -1,0 +1,23 @@
+To demonstrate how interrupt can preempt a current running process
+There are two processes in the system: proc1 and proc2.
+
+You will need to open two UART terminals.
+The COM0 terminal is interrupt driven and accepts user input. 
+When user types 'S' single char in the terminal, the system switches from the current running process to the other ready process
+
+The COM1 terminal uses polling mechanism and output the debugging messages.
+The user proc1 and proc2 outputs for now to the debugging terminal for now.
+
+Expected behavior:
+
+If user does not type anything from the COM0 or types a character other than 'S', then 
+proc1 and proc2 will switch between each other after six lines are printed.
+proc1 prints six lines of upper case letters.
+proc2 prints six lines of single digits.
+
+When the user types an 'S' in COM0, then the current running process immediately releases
+the processor and switches the cpu to the other process in the system.
+
+Note there is a dummy loop added to introduce some delay so that it is easier to type 'S' before a process finishes printing six lines.
+
+The code has not been tested on the board. To run it on the board, you will need to increase the delay.
