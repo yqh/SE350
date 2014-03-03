@@ -33,7 +33,7 @@
 
 
 /* convenient macro for bit operation */
-#define BIT(X)    ( 1 << X )
+#define BIT(X)    ( 1 << (X) )
 
 /* 
    8 bits, no Parity, 1 Stop bit
