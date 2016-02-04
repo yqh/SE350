@@ -2,7 +2,7 @@
  * @file:   usr_proc.c
  * @brief:  Six user processes: proc1...6 to do simple processor managment testing
  * @author: Yiqing Huang
- * @date:   2014/02/07
+ * @date:   2016/02/03
  * NOTE: Each process is in an infinite loop. Processes never terminate.
  * Expected UART output:
  * abcde
@@ -55,6 +55,7 @@ void set_test_procs() {
 	g_test_procs[5].mpf_start_pc = &proc6;
 	g_test_procs[5].m_priority   = LOW;
 
+	uart1_init();
 }
 
 
@@ -69,7 +70,7 @@ void proc1(void)
 	while ( 1 ) {
 		
 		if ( i != 0 && i%5 == 0 ) {
-			uart0_put_string("\n\r");
+			uart1_put_string("\n\r");
 			counter++;
 			if ( counter == 2 ) {
 				ret_val = set_process_priority(PID_P2, HIGH);
@@ -81,10 +82,10 @@ void proc1(void)
 			printf("proc1: ret_val = %d \n", ret_val);
 #endif /* DEBUG_0 */
 		}
-		uart0_put_char('a' + i%10);
+		uart1_put_char('a' + i%10);
 		i++;
 	}
-	uart0_put_string("proc1 end of testing\n\r");
+	uart1_put_string("proc1 end of testing\n\r");
 	while ( 1 ) {
 		release_processor();
 	}
@@ -101,7 +102,7 @@ void proc2(void)
 	
 	while ( 1) {
 		if ( i != 0 && i%5 == 0 ) {
-			uart0_put_string("\n\r");
+			uart1_put_string("\n\r");
 			counter++;
 			if ( counter == 4 ) {
 				ret_val = set_process_priority(PID_P1, HIGH);
@@ -113,10 +114,10 @@ void proc2(void)
 			printf("proc2: ret_val=%d\n", ret_val);
 #endif /* DEBUG_0 */
 		}
-		uart0_put_char('0' + i%10);
+		uart1_put_char('0' + i%10);
 		i++;
 	}
-	uart0_put_string("proc2 end of testing\n\r");
+	uart1_put_string("proc2 end of testing\n\r");
 	while ( 1 ) {
 		release_processor();
 	}
@@ -126,7 +127,7 @@ void proc3(void)
 {
 	
 	while(1) {
-		uart0_put_string("proc3: \n\r");
+		uart1_put_string("proc3: \n\r");
 		release_processor();
 	}
 }
@@ -134,7 +135,7 @@ void proc3(void)
 void proc4(void)
 {
 	while(1) {
-		uart0_put_string("proc4: \n\r");
+		uart1_put_string("proc4: \n\r");
 		release_processor();
 	}
 }
@@ -142,7 +143,7 @@ void proc4(void)
 void proc5(void)
 {
 	while(1) {
-		uart0_put_string("proc5: \n\r");
+		uart1_put_string("proc5: \n\r");
 		release_processor();
 	}
 }
@@ -150,7 +151,7 @@ void proc5(void)
 void proc6(void)
 {
 	while(1) {
-		uart0_put_string("proc6: \n\r");
+		uart1_put_string("proc6: \n\r");
 		release_processor();
 	}
 }

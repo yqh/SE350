@@ -2,7 +2,7 @@
  * @file:   usr_proc.c
  * @brief:  Six user processes: proc1...6 to test memory blocking/unblocking 
  * @author: Yiqing Huang
- * @date:   2014/02/07
+ * @date:   2016/02/03
  * NOTE: Each process is in an infinite loop. Processes never terminate.
  *       The test requires set_process_priority preemption works properly.
  *   
@@ -76,6 +76,8 @@ void set_test_procs() {
 	
 	g_test_procs[5].mpf_start_pc = &proc6;
 	g_test_procs[5].m_priority   = LOW;
+	
+	uart1_init();
 }
 
 
@@ -89,13 +91,13 @@ void proc1(void)
 	void *p_mem_blk;
 	while ( 1 ) {
 		if ( i != 0 && i%5 == 0 ) {
-			uart0_put_string("\n\r");
+			uart1_put_string("\n\r");
 			p_mem_blk = request_memory_block();
 #ifdef DEBUG_0
 			printf("proc1: p_mem_blk=0x%x\n", p_mem_blk);
 #endif /* DEBUG_0 */
 		}
-		uart0_put_char('A' + i%26);
+		uart1_put_char('A' + i%26);
 		i++;
 	}
 }
@@ -114,7 +116,7 @@ void proc2(void)
 	set_process_priority(PID_P2, MEDIUM);
 	while ( 1) {
 		if ( i != 0 && i%5 == 0 ) {
-			uart0_put_string("\n\r");
+			uart1_put_string("\n\r");
 			ret_val = release_memory_block(p_mem_blk);
 #ifdef DEBUG_0
 			printf("proc2: ret_val=%d\n", ret_val);
@@ -123,10 +125,10 @@ void proc2(void)
 				break;
 			}
 		}
-		uart0_put_char('0' + i%10);
+		uart1_put_char('0' + i%10);
 		i++;
 	}
-	uart0_put_string("proc2: end of testing\n\r");
+	uart1_put_string("proc2: end of testing\n\r");
 	set_process_priority(PID_P2, LOWEST);
 	while ( 1 ) {
 		release_processor();
@@ -139,7 +141,7 @@ void proc3(void)
 	
 	while(1) {
 		if ( i < 2 ) {
-			uart0_put_string("proc3: \n\r");
+			uart1_put_string("proc3: \n\r");
 		}
 		release_processor();
 		i++;
@@ -152,7 +154,7 @@ void proc4(void)
 	
 	while(1) {
 		if ( i < 2 ) {
-			uart0_put_string("proc4: \n\r");
+			uart1_put_string("proc4: \n\r");
 		}
 		release_processor();
 		i++;
@@ -164,7 +166,7 @@ void proc5(void)
 	
 	while(1) {
 		if ( i < 2 )  {
-			uart0_put_string("proc5: \n\r");
+			uart1_put_string("proc5: \n\r");
 		}
 		release_processor();
 		i++;
@@ -176,7 +178,7 @@ void proc6(void)
 	
 	while(1) {
 		if ( i < 2 )  {
-			uart0_put_string("proc6: \n\r");
+			uart1_put_string("proc6: \n\r");
 		}
 		release_processor();
 		i++;
