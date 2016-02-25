@@ -33,7 +33,7 @@
 #define PID_CLOCK        11
 #define PID_KCD          12
 #define PID_CRT          13
-#define PID_TIMER_IPROC  7 //14
+#define PID_TIMER_IPROC  14
 #define PID_UART_IPROC   15
 
 
