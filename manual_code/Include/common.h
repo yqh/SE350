@@ -1,7 +1,7 @@
 /* @brief: common defines and structs for both kernel and user 
  * @file: common.h 
  * @author: Yiqing Huang
- * @date: 2016/02/24
+ * @date: 2017/01/04
  */
 
 #ifndef COMMON_H_
