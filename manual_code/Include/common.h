@@ -46,7 +46,8 @@
 /* Message Types */
 #define DEFAULT 0
 #define KCD_REG 1
-#define CRT_DISPLAY 2
+#define KCD_CMD 2
+#define CRT_DISPLAY 3
 
 /* ----- Types ----- */
 typedef unsigned char U8;
