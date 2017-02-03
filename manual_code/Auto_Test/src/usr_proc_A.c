@@ -5,6 +5,18 @@
  * @date:   2016/02/03
  * NOTE: Each process is in an infinite loop. Processes never terminate.
  * Expected UART output:
+ *
+ * abcde
+ * 01234
+ * fghij
+ * 56789
+ * 01234
+ * 56789
+ * proc1 end of testing
+ * proc2 end of testing
+ *
+ * OR
+ *
  * abcde
  * 01234
  * fghij
