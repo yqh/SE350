@@ -1,6 +1,6 @@
 
 
-## main branch 
+## master branch 
 
 University of Waterloo SE350 Winter 2021 Operating Systems RTX Project Starter Files and Documentation.
 
