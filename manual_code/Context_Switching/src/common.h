@@ -40,6 +40,8 @@
 #ifndef COMMON_H_
 #define COMMON_H_
 
+#include "common_ext.h"
+
 /*
  *===========================================================================
  *                             MACROS
@@ -114,24 +116,24 @@ typedef unsigned char       BOOL;
 
 /* initialization table item, exposed to user space */
 typedef struct proc_init
-{	
-	int m_pid;	            /**> process id                 */ 
-	int m_priority;         /**> initial priority           */ 
-	int m_stack_size;       /**> size of stack in bytes     */
-	void (*mpf_start_pc) ();/**> entry point of the process */    
+{    
+    int m_pid;                  /**> process id                 */ 
+    int m_priority;             /**> initial priority           */ 
+    int m_stack_size;           /**> size of stack in bytes     */
+    void (*mpf_start_pc) ();    /**> entry point of the process */    
 } PROC_INIT;
 
 /* message buffer */
 typedef struct msgbuf
 {
 #ifdef K_MSG_ENV
-	void *mp_next;		    /**> ptr to next message received*/
-	int m_send_pid;		    /**> sender pid                  */
-	int m_recv_pid;		    /**> receiver pid                */
-	int m_kdata[5];		    /**> extra 20B kernel data place holder */
+    void *mp_next;              /**> ptr to next message received*/
+    int m_send_pid;             /**> sender pid                  */
+    int m_recv_pid;             /**> receiver pid                */
+    int m_kdata[5];             /**> extra 20B kernel data place holder */
 #endif
-	int mtype;              /**> user defined message type   */
-	char mtext[1];          /**> body of the message         */
+    int mtype;                  /**> user defined message type   */
+    char mtext[1];              /**> body of the message         */
 } MSG_BUF;
 
 #endif // COMMON_H_
