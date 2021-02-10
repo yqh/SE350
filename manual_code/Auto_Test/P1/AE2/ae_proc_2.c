@@ -57,55 +57,57 @@
  *****************************************************************************/
 void proc1(void)
 {
-	int i = 0;
-	void *p_mem_blk;
-	while ( 1 ) {
-		if ( i != 0 && i%5 == 0 ) {
-			uart1_put_string("\n\r");
-			p_mem_blk = request_memory_block();
+    int i = 0;
+    void *p_mem_blk;
+    while ( 1 ) {
+        if ( i != 0 && i%5 == 0 ) {
+            uart1_put_string("\n\r");
+            p_mem_blk = request_memory_block();
 #ifdef DEBUG_0
-			printf("proc1: p_mem_blk=0x%x\n", p_mem_blk);
+            printf("proc1: p_mem_blk=0x%x\n", p_mem_blk);
 #endif /* DEBUG_0 */
-		}
-		uart1_put_char('A' + i%26);
-		i++;
-	}
+        }
+        uart1_put_char('A' + i%26);
+        i++;
+    }
 }
 /**************************************************************************//**
  * @brief  a process that tries to free another process's memory
  *****************************************************************************/
 void proc2(void)
 {
-	int i = 0;
-	int ret_val = 20;
-	void *p_mem_blk;
-	
-	p_mem_blk = request_memory_block();
-	set_process_priority(PID_P2, MEDIUM);
-	while ( 1) {
-		if ( i != 0 && i%5 == 0 ) {
-			uart1_put_string("\n\r");
-			ret_val = release_memory_block(p_mem_blk);
+    int i = 0;
+    int ret_val = 20;
+    void *p_mem_blk;
+    
+    p_mem_blk = request_memory_block();
+    set_process_priority(PID_P2, LOW);
+    while ( 1) {
+        if ( i != 0 && i%5 == 0 ) {
+            uart1_put_string("\n\r");
+            ret_val = release_memory_block(p_mem_blk);            
 #ifdef DEBUG_0
-			printf("proc2: ret_val=%d\n", ret_val);
+            printf("proc2: ret_val=%d\n", ret_val);
 #endif /* DEBUG_0 */
-			if ( ret_val == -1 ) {
-				break;
-			}
-		}
-		uart1_put_char('0' + i%10);
-		i++;
-	}
-	uart1_put_string("proc2: end of testing\n\r");
-	set_process_priority(PID_P2, LOWEST);
-	while ( 1 ) {
-		release_processor();
-	}
+            if ( ret_val == -1 ) {
+                break;
+            }
+        }
+        uart1_put_char('0' + i%10);
+        i++;
+    }
+    uart1_put_string("proc2: end of testing\n\r");
+    set_process_priority(PID_P2, MEDIUM);
+    set_process_priority(PID_P3, LOW);
+    set_process_priority(PID_P4, LOW);
+    set_process_priority(PID_P2, LOWEST);
+    while ( 1 ) {
+        release_processor();
+    }
 }
 
 void proc3(void)
 {
-    
     while(1) {
         uart1_put_string("proc3: \n\r");
         release_processor();
