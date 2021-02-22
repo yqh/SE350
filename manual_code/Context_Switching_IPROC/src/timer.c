@@ -145,7 +145,10 @@ ITIMER_SAVE
     // save the interrupted process's PCB in gp_pcb_interrupted
     LDR     R3, =__cpp(&gp_pcb_interrupted) // load &gp_pcb_interrupted to R3
     STR     R2, [R3]                        // assign gp_current_process to gp_pcb_interrupted
-
+    
+    // update gp_current_process to point to the gp_pcb_timer_iproc
+    // not implemented, you need to do it
+    
 ITIMER_EXEC    
     // update gp_current_process to the PCB of timer_i_proc 
     LDR     R1, =__cpp(&gp_pcb_timer_iproc) // load R1 with &gp_pcb_timer_iproc 
@@ -154,6 +157,9 @@ ITIMER_EXEC
     BL      timer0_iproc                    // execute the timer i-process
     
 ITIMER_RESTORE
+    // updae the gp_current_process to gp_pcb_interrupted
+    // not implemented, you need to do it
+    
     // restore the interrupted process's PCB to gp_current_process
     LDR     R1, =__cpp(&gp_pcb_interrupted)
     LDR     R2, [R1]
