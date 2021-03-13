@@ -27,70 +27,60 @@
  
 
 /**************************************************************************//**
- * @file        ae_proc.h
- * @brief       six user test processes header file 
- *              
- * @version     V1.2021.01
+ * @brief       AE Timer header file              
+ * @version     V1.2021.03
  * @authors     Yiqing Huang
- * @date        2021 JAN
+ * @date        2021 MAR
  *****************************************************************************/
+
+#ifndef _AE_TIMER_H_
+#define _AE_TIMER_H_
+#include <LPC17xx.h>
+
+/*
+ *===========================================================================
+ *                             MACROS
+ *===========================================================================
+ */
  
-#ifndef AE_PROC_H_
-#define AE_PROC_H_
-
-#include "ae.h"
-
-/*
- *===========================================================================
- *                             MACROS
- *===========================================================================
- */
-#ifdef SIM_TARGET       /* using the simulator is slow */
-#define DELAY 100000
-#else
-#define DELAY 10000000
-#endif /* SIM_TARGET */
-
-/*
- *===========================================================================
- *                             MACROS
- *===========================================================================
- */
-#define AE_REQ_100          200
-#define AE_REQ_101          201
-
-#define AE_RST_100          (AE_REQ_100 + 100)
-#define AE_RST_101          (AE_REQ_101 + 100)  
-
-#define AE_1M_NSEC          1000000     /* 10^6 nsec = 1   ms  */  
-#define AE_10M_NSEC         10000000    /* 10^7 nsec = 10  ms  */
-#define AE_100M_NSEC        100000000   /* 10^8 nsec = 100 ms  */
-#define AE_1B_NSEC          1000000000  /* 10^9 nsec = 1   sec */
+#define BIT(X) ( 1 << (X) )
 
 /*
  *===========================================================================
  *                             STRUCTURES
  *===========================================================================
  */
-  
-typedef  struct ae_msg_req {
-    U32     req_no;             /*> req number              */
-    struct  ae_tick tk;         /*> timer tick              */
-    int     delay;              /*> delay in milliseconds   */ 
-    char    bytes[1];           /*> bytes                   */
-} AE_MSG_REQ;
+ 
+
+/* Timer Counter Struct */
+struct ae_tick {
+    uint32_t tc;        /*> seconds              */
+    uint32_t pc;        /*> tens of nano seconds */
+};
+
+/**
+ * @brief   data strucure to represent time in seconds and nano seconds
+ * @note    Example: to represent 3.004 seconds, set
+ *          sec = 3 and nsec = 4*10^6
+ */
+struct ae_time {
+    uint32_t sec;       /*> seconds             */
+    uint32_t nsec;      /*> nano seconds        */
+};
 
 /*
  *===========================================================================
  *                            FUNCTION PROTOTYPES
  *===========================================================================
  */
-extern void set_test_procs(PROC_INIT *procs, int num);
-extern void proc1(void);
-extern void proc2(void);
-extern void proc3(void);
-extern void proc4(void);
-extern void proc5(void);
-extern void proc6(void);
 
-#endif /* AE_PROC_H_ */
+extern uint32_t ae_timer_init_100MHZ(uint8_t n_timer);
+extern int ae_get_tick(struct ae_tick *tm, uint8_t n_timer);
+extern int ae_get_tick_diff(struct ae_time *tm, struct ae_tick *tk1, struct ae_tick *tk2);
+#endif /* ! _AE_TIMER_H_ */
+
+/*
+ *===========================================================================
+ *                             END OF FILE
+ *===========================================================================
+ */

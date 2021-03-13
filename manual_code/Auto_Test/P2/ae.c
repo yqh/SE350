@@ -50,6 +50,7 @@ int ae_init(PROC_INIT *proc_info, int num, int (*cb_func) (void *(arg)), void *a
     }
     
     cb_func(arg);
+    ae_timer_init_100MHZ(AE_TIMER2);
     
     ae_set_proc_info(proc_info, num);
     return RTX_OK;

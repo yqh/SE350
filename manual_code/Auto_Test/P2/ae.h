@@ -24,7 +24,11 @@
  *
  *****************************************************************************/
  
+#ifndef _AE_H_
+#define _AE_H_
+
 #include "rtx.h"
+#include "ae_timer.h"
 
 /*
  *===========================================================================
@@ -37,6 +41,7 @@
 #define IROM_BASE  0x0
 #endif
 
+#define AE_TIMER2  2
 /*
  *===========================================================================
  *                            FUNCTION PROTOTYPES
@@ -46,6 +51,7 @@ extern int  ae_init(PROC_INIT *proc_info, int num, int (*cb_func) (void * arg), 
 extern void ae_set_proc_info(PROC_INIT *tasks, int num);
 extern void set_test_procs(PROC_INIT *procs, int num);
 
+#endif  // ! _AE_H_
 /*
  *===========================================================================
  *                             END OF FILE

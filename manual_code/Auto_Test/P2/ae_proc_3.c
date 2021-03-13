@@ -84,13 +84,11 @@ void set_test_procs(PROC_INIT *procs, int num)
  */
 void proc1(void)
 {
-    int i = 0;
-    int j = 0;
-    int ret_val = 10;
-    void *p_mem_blk;
-    void *p_blk;
+    int     i = 0;
+    int     j = 0;
+    void    *p_blk;
     MSG_BUF *p_msg;
-    char *ptr;
+    char    *ptr;
     
     uart1_put_string("proc1: requesting a mem_blk...\n\r");
     p_blk = request_memory_block();
@@ -109,7 +107,7 @@ void proc1(void)
         if ( i != 0 && i%5 == 0 ) {
             uart1_put_string("\n\r");
             //ret_val = release_processor();
-            p_mem_blk = request_memory_block();
+            p_blk = request_memory_block();
             p_msg = p_blk;
             p_msg->mtype = DEFAULT;
             ptr = p_msg->mtext;
@@ -119,9 +117,6 @@ void proc1(void)
             *ptr++ = '\0';
             uart1_put_string("proc1: send a message to proc2...\n\r");
             send_message(PID_P2, p_blk);
-#ifdef DEBUG_0
-            printf("proc1: p_mem_blk=0x%x\n", p_mem_blk);
-#endif /* DEBUG_0 */
         }
         if ( j == g_iterations ) {
             break;
@@ -142,12 +137,10 @@ void proc1(void)
  */
 void proc2(void)
 {
-    int i = 0;
-    int j = 0;
-    int ret_val = 20;
-    void *p_mem_blk;
+    int     i = 0;
+    int     j = 0;
     MSG_BUF *p_msg;
-    void *p_blk;
+    void    *p_blk;
     
     uart1_put_string("proc2: receiving messages ...\n\r");
     p_blk = receive_message(NULL);
@@ -166,9 +159,6 @@ void proc2(void)
             uart1_put_string(p_msg->mtext);
             release_memory_block(p_blk);
             j++;
-#ifdef DEBUG_0
-            printf("proc2: ret_val=%d\n", ret_val);
-#endif /* DEBUG_0 */
         }
         if ( j == g_iterations ) {
             break;
@@ -198,10 +188,7 @@ void proc3(void)
 
     uart1_put_string("proc3: entering..., starting delay_send\n\r");    
     while( i < num_msgs ) {
-#ifdef DEBUG_0
-        uart1_put_string("proc3: request mem_blk\n\r");
-#endif // DEBUG_0
-        p_blk = (MSG_BUF *)request_memory_block();
+        p_blk = request_memory_block();
 #ifdef DEBUG_0
         printf("=0%x, i =[%d], delay= %d\n\r",p_blk, i, delay[i]);
 #endif // DEBUG_0
@@ -232,8 +219,8 @@ void proc3(void)
 void proc4(void)
 {
     MSG_BUF *p_msg;
-    void * p_blk;
-    int send_id;
+    void    *p_blk;
+    int     send_id;
     
     uart1_put_string("proc4: entering...\n\r");
     while(1) {
