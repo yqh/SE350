@@ -157,7 +157,10 @@ int ae_get_tick_diff(struct ae_time *tm, struct ae_tick *tk1, struct ae_tick *tk
     if ( diff_tc < 0 ) {    
         diff_pc = - diff_pc;
         diff_tc = - diff_tc;
+    } else if ( diff_tc == 0  && diff_pc < 0 ) {
+        diff_pc = - diff_pc;
     }
+   
     
     if ( diff_pc < 0 ) {
         tm->sec  = diff_tc - 1;
