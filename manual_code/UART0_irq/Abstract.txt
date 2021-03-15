@@ -1,0 +1,16 @@
+The UART0_irq program is to demonstrate how to program uart0 interrupts. The uart1 is by polling for debugging purpose.
+The UART0_irq program is available in different targets:
+
+ - UART0 IRQ SIM:
+   - Compiler:                  ARM Compiler Default Version 5
+   - Configured for simulator debugger
+
+ - UART0 IRQ RAM:
+   - Compiler:                  ARM Compiler Default Version 5
+   - Runs from Internal RAM located on chip
+     (may be used for target debugging)
+
+Expected behavior: 
+On UART1: it will print a line "COM1> Type a character at COM0 terminal". If DEBUG_0 is defined, more debugging messsages will appear during run time.
+On UART0: user presses a key on the keyboard, then the key will be echoed back to UART0 as "You Typed a "<key_typed>. 
+For Example, assume "d" is pressed on the keyboard, UART0 will display "You Typed a d".
