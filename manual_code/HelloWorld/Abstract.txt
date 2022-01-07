@@ -1,0 +1,18 @@
+The HelloWorld project is a simple example to output strings to serial ports by polling
+for the NXP 'LPC1768' microcontroller using Keil 'MCB1700' Evaluation Board.
+Compliant to Cortex Microcontroller Software Interface Standard (CMSIS).
+
+Example functionality:
+ - UART0 outputs "Howdy!" by polling
+ - UART1 outputs "HelloWorld" by polling
+
+The HelloWorld program is available in different targets:
+
+ - HelloWorld SIM:
+   - Compiler:                  ARM Compiler Default Version 5
+   - Configured for simulator debugger
+   
+ - HelloWorld RAM:
+   - Compiler:                  ARM Compiler Default Version 5
+   - Runs from Internal RAM located on chip
+     (may be used for target debugging)
