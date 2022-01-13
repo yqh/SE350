@@ -3,7 +3,7 @@
  *
  *                  UNIVERSITY OF WATERLOO SE 350 RTX LAB  
  *
- *                     Copyright 2020-2021 Yiqing Huang
+ *                     Copyright 2020-2022 Yiqing Huang
  *                          All rights reserved.
  *---------------------------------------------------------------------------
  *  Redistribution and use in source and binary forms, with or without
@@ -32,7 +32,7 @@
  *              
  * @version     V1.2021.01
  * @authors     Yiqing Huang
- * @date        2021 JAN
+ * @date        2022 JAN
  * @attention   only two processes are initialized, not all six user test procs
  *****************************************************************************/
 
@@ -50,7 +50,7 @@ U32 *gp_stack; /* The last allocated stack low address. 8 bytes aligned */
 	           /* stack grows down. Fully decremental stack             */
 
 /**************************************************************************//**
- * @brief: Initialize RAM as follows:
+ * @brief: Initialize RAM of the SIM Target as follows:
 
 0x10008000+---------------------------+ High Address
           |    Proc 1 STACK           |
@@ -139,6 +139,14 @@ U32 *alloc_stack(U32 size_b)
  *                            TO BE IMPLEMENTED
  *==========================================================================
  */
+
+void *k_request_memory_block_nb(void) {
+#ifdef DEBUG_0 
+	printf("k_request_memory_block_nb: entering...\n");
+#endif /* ! DEBUG_0 */
+	return (void *) NULL;
+}
+
 void *k_request_memory_block(void) {
 #ifdef DEBUG_0 
 	printf("k_request_memory_block: entering...\n");

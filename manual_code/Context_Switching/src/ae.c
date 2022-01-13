@@ -3,7 +3,7 @@
  *
  *                  UNIVERSITY OF WATERLOO SE 350 RTOS LAB  
  *
- *                     Copyright 2020-2021 Yiqing Huang
+ *                     Copyright 2020-2022 Yiqing Huang
  *
  *          This software is subject to an open source license and 
  *          may be freely redistributed under the terms of MIT License.
@@ -14,9 +14,9 @@
  * @file        ae.c
  * @brief       automated testing framework source code 
  *              
- * @version     V1.2021.01
+ * @version     V1.2021.02
  * @authors     Yiqing Huang
- * @date        2021 JAN
+ * @date        2022 JAN
  * 
  * @attention
  * @note
@@ -56,13 +56,22 @@ int ae_init(PROC_INIT *proc_info, int num, int (*cb_func) (void *(arg)), void *a
 }
 
 /**************************************************************************//**
+ * @brief   	 call this function to end testing
+ *****************************************************************************/
+void ae_exit(void) 
+{
+    while(1);
+}
+
+/**************************************************************************//**
  * @brief   	ae_set_proc_info
  * @param[out]  proc_info proc initialization struct array AE writes to
  * @param[in]   num       length of proc_info array
  *****************************************************************************/
 
 void ae_set_proc_info(PROC_INIT *procs, int num) {
-
+    set_test_procs(procs, num);    
+/*
     int i;
     for( i = 0; i < num; i++ ) {
         procs[i].m_pid        = (U32)(i+1);
@@ -76,6 +85,7 @@ void ae_set_proc_info(PROC_INIT *procs, int num) {
     procs[3].mpf_start_pc = &proc4;
     procs[4].mpf_start_pc = &proc5;
     procs[5].mpf_start_pc = &proc6;
+*/
 }
 
 /*

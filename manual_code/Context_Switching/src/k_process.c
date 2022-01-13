@@ -3,7 +3,7 @@
  *
  *                  UNIVERSITY OF WATERLOO SE 350 RTX LAB  
  *
- *           Copyright 2020-2021 Yiqing Huang and Thomas Reidemeister
+ *           Copyright 2020-2022 Yiqing Huang and Thomas Reidemeister
  *                          All rights reserved.
  *---------------------------------------------------------------------------
  *  Redistribution and use in source and binary forms, with or without
@@ -30,9 +30,9 @@
  * @file        k_process.c 
  * @brief       kernel process management C file 
  *              
- * @version     V1.2021.01
+ * @version     V1.2022.01
  * @authors     Yiqing Huang, Thomas Reidemeister
- * @date        2021 JAN
+ * @date        2022 JAN
  * @note        The example code shows one way of implementing context switching.
  *              The code only has minimal sanity check. 
  *              There is no stack overflow check.
@@ -144,6 +144,10 @@ int process_switch(PCB *p_pcb_old)
 			p_pcb_old->mp_sp = (U32 *) __get_MSP();
 		}
 		gp_current_process->m_state = RUN;
+        
+        U32 ctrl = __get_CONTROL();
+        ctrl &= ~BIT(0);    // clear bit 0, want to be at priv. level when exit from the kernel
+        __set_CONTROL(ctrl);
 		__set_MSP((U32) gp_current_process->mp_sp);
 		__rte();  // pop exception stack frame from the stack for a new processes
 	} 

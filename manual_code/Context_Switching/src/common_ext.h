@@ -3,7 +3,7 @@
  *
  *                  UNIVERSITY OF WATERLOO SE 350 RTX LAB  
  *
- *                     Copyright 2020-2021 Yiqing Huang
+ *                     Copyright 2020-2022 Yiqing Huang
  *                          All rights reserved.
  *---------------------------------------------------------------------------
  *  Redistribution and use in source and binary forms, with or without
@@ -30,9 +30,9 @@
  * @file        common_ext.h
  * @brief       Extended common macros and structures for both kernel and user
  *              for students to add self-defined macros and structures
- * @version     V1.2021.01
+ * @version     V1.2022.01
  * @authors     Yiqing Huang
- * @date        2021 JAN
+ * @date        2022 JAN
  *
  * @see         common.h
  *
@@ -45,6 +45,8 @@
  *              Do not overwrite existing message type macro values.
  *
  *****************************************************************************/
+#ifndef COMMON_EXT_H_
+#define COMMON_EXT_H_
 
 /*
  *===========================================================================
@@ -65,7 +67,7 @@
  *===========================================================================
  */
  
- 
+ #endif // !COMMON_EXT_H_
 /*
  *===========================================================================
  *                             END OF FILE

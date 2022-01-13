@@ -3,7 +3,7 @@
  *
  *                  UNIVERSITY OF WATERLOO SE 350 RTX LAB  
  *
- *                     Copyright 2020-2021 Yiqing Huang
+ *                     Copyright 2020-2022 Yiqing Huang
  *                          All rights reserved.
  *---------------------------------------------------------------------------
  *  Redistribution and use in source and binary forms, with or without
@@ -30,13 +30,15 @@
  * @file        ae_proc.h
  * @brief       six user test processes header file 
  *              
- * @version     V1.2021.01
+ * @version     V1.2022.01
  * @authors     Yiqing Huang
- * @date        2021 JAN
+ * @date        2022 JAN
  *****************************************************************************/
  
 #ifndef AE_PROC_H_
 #define AE_PROC_H_
+
+#include "ae.h"
 
 /*
  *===========================================================================
@@ -55,6 +57,7 @@
  *===========================================================================
  */
 
+extern void set_test_procs(PROC_INIT *procs, int num);
 extern void proc1(void);
 extern void proc2(void);
 extern void proc3(void);

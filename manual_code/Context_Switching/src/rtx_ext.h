@@ -3,7 +3,7 @@
  *
  *                  UNIVERSITY OF WATERLOO SE 350 RTX LAB  
  *
- *                     Copyright 2020-2021 Yiqing Huang
+ *                     Copyright 2020-2022 Yiqing Huang
  *                          All rights reserved.
  *---------------------------------------------------------------------------
  *  Redistribution and use in source and binary forms, with or without
@@ -30,21 +30,37 @@
  * @file        rtx_ext.h 
  * @brief       RTX extended user API
  *              
- * @version     V1.2021.01
+ * @version     V1.2022.01
  * @authors     Yiqing Huang
- * @date        2021 JAN
+ * @date        2022 JAN
  * 
  * @note        self-defined new RTX user API are declared in this file
  * @see         rtx_ext.h
  * @see         common.h
  *****************************************************************************/
+ #ifndef RTX_EXT_H_
+ #define RTX_EXT_H_
  
+ #include "common.h"
+ 
+ /*
+ *===========================================================================
+ *                             MACROS
+ *===========================================================================
+ */
+
+#define __SVC_0  __svc_indirect(0)
  /*
  *===========================================================================
  *                            FUNCTION PROTOTYPES
  *===========================================================================
  */
- 
+ /* Memeory Management */
+extern void *k_request_memory_block_nb(void);
+#define request_memory_block_nb() _request_memory_block_nb((U32)k_request_memory_block_nb)
+extern void *_request_memory_block_nb(U32 p_func) __SVC_0;
+
+#endif // !RTX_EXT_H_
  /*
  *===========================================================================
  *                             END OF FILE

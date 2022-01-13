@@ -3,7 +3,7 @@
  *
  *                  UNIVERSITY OF WATERLOO SE 350 RTX LAB  
  *
- *                     Copyright 2020-2021 Yiqing Huang
+ *                     Copyright 2020-2022 Yiqing Huang
  *                          All rights reserved.
  *---------------------------------------------------------------------------
  *  Redistribution and use in source and binary forms, with or without
@@ -53,12 +53,7 @@
  *                            GLOBAL VARIABLES
  *==========================================================================
  */
-#if 0
-/* This symbol is defined in the scatter file (see RVCT Linker User Guide) */  
-extern unsigned int Image$$RW_IRAM1$$ZI$$Limit; 
-extern PCB          **gp_pcbs;
-extern PROC_INIT    g_proc_table[NUM_TEST_PROCS];
-#endif 
+
 
 /*
  *===========================================================================
@@ -67,6 +62,7 @@ extern PROC_INIT    g_proc_table[NUM_TEST_PROCS];
  */
 extern void memory_init(void);
 extern U32  *alloc_stack(U32 size_b);
+extern void *k_request_memory_block_nb(void);
 extern void *k_request_memory_block(void);
 extern int  k_release_memory_block(void *);
 

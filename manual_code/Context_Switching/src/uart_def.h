@@ -3,7 +3,7 @@
  *
  *                  UNIVERSITY OF WATERLOO SE 350 RTX LAB  
  *
- *                     Copyright 2020-2021 Yiqing Huang
+ *                     Copyright 2020-2022 Yiqing Huang
  *                          All rights reserved.
  *---------------------------------------------------------------------------
  *  Redistribution and use in source and binary forms, with or without
@@ -66,7 +66,7 @@
 
 
 /* convenient macro for bit operation */
-#define BIT(X)      ( 1 << (X) )
+#define BIT(X)      ( 1u << (X) )
 
 /* 
    8 bits, no Parity, 1 Stop bit

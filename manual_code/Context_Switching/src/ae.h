@@ -3,7 +3,7 @@
  *
  *                  UNIVERSITY OF WATERLOO SE 350 RTOS LAB  
  *
- *                     Copyright 2020-2021 Yiqing Huang
+ *                     Copyright 2020-2022 Yiqing Huang
  *
  *          This software is subject to an open source license and 
  *          may be freely redistributed under the terms of MIT License.
@@ -14,9 +14,9 @@
  * @file        ae.h
  * @brief       automated testing framework header file
  *              
- * @version     V1.2021.01
+ * @version     V1.2022.01
  * @authors     Yiqing Huang
- * @date        2021 JAN
+ * @date        2022 JAN
  * 
  * @attention
  * @note
@@ -24,6 +24,9 @@
  *
  *****************************************************************************/
  
+#ifndef _AE_H_
+#define _AE_H_
+
 #include "rtx.h"
 
 /*
@@ -44,6 +47,10 @@
  */
 extern int  ae_init(PROC_INIT *proc_info, int num, int (*cb_func) (void * arg), void *arg);
 extern void ae_set_proc_info(PROC_INIT *tasks, int num);
+extern void ae_exit(void); 
+extern void set_test_procs(PROC_INIT *procs, int num);
+
+#endif  // ! _AE_H_
 
 /*
  *===========================================================================

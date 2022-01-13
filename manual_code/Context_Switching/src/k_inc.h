@@ -3,7 +3,7 @@
  *
  *                  UNIVERSITY OF WATERLOO SE 350 RTX LAB  
  *
- *                     Copyright 2020-2021 Yiqing Huang
+ *                     Copyright 2020-2022 Yiqing Huang
  *                          All rights reserved.
  *---------------------------------------------------------------------------
  *  Redistribution and use in source and binary forms, with or without
@@ -29,9 +29,9 @@
 /**************************************************************************//**
  * @file        k_inc.h
  * @brief       Kernel Macros and Data Structure Header file          
- * @version     V1.2021.01
+ * @version     V1.2022.01
  * @authors     Yiqing Huang
- * @date        2021 JAN
+ * @date        2022 JAN
  *
  * @note        all kernel .c files include this one
  *
@@ -69,7 +69,7 @@ typedef struct pcb
  *                   GLOBAL VARIABLES DECLARATIONS
  *==========================================================================
  */
-/* This symbol is defined in the scatter file (see RVCT Linker User Guide)*/  
+/* This symbol is defined in the scatter file (see ARM Linker User Guide)*/  
 extern unsigned int Image$$RW_IRAM1$$ZI$$Limit; 
 extern U32          *gp_stack;            /* see k_memory.c for details   */  
 extern PCB          **gp_pcbs;            /* array of pcbs */

@@ -3,7 +3,7 @@
  *
  *                  UNIVERSITY OF WATERLOO SE 350 RTX LAB  
  *
- *                     Copyright 2020-2021 Yiqing Huang
+ *                     Copyright 2020-2022 Yiqing Huang
  *                          All rights reserved.
  *---------------------------------------------------------------------------
  *  Redistribution and use in source and binary forms, with or without
@@ -41,12 +41,6 @@
  * @see         common.h
  *****************************************************************************/
 
-
-
-/* @brief: rtx.h User API prototype, this is only an example
- * @author: Yiqing Huang
- * @date: 2016/02/24
- */
 #ifndef RTX_H_
 #define RTX_H_
 
