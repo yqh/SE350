@@ -24,8 +24,47 @@
 
 #include "rtx.h"
 #include "uart_polling.h"
-#include "ae_proc.h"
 #include "printf.h"
+#include "ae_proc.h"
+#include "ae_util.h"
+/*
+ *===========================================================================
+ *                             MACROS
+ *===========================================================================
+ */
+
+#ifdef AE_ENABLE
+    
+#define NUM_TESTS       2       // number of tests
+
+#ifdef AE_ECE350
+#define NUM_INIT_TASKS  2       // number of tasks during initialization
+#endif // AE_ECE350
+
+#endif // AE_ENABLE
+/*
+ *===========================================================================
+ *                             GLOBAL VARIABLES 
+ *===========================================================================
+ */
+ 
+#ifdef AE_ENABLE
+
+#ifdef AE_ECE350
+TASK_INIT    g_init_tasks[NUM_INIT_TASKS];
+#endif
+
+
+const char   PREFIX[]      = "G99-TS3";
+const char   PREFIX_LOG[]  = "G99-TS3-LOG ";
+const char   PREFIX_LOG2[] = "G99-TS3-LOG2";
+
+AE_XTEST     g_ae_xtest;                // test data, re-use for each test
+AE_CASE      g_ae_cases[NUM_TESTS];
+AE_CASE_TSK  g_tsk_cases[NUM_TESTS];
+
+#endif // AE_ENABLE
+
 
 /* initialization table item */
 void set_test_procs(PROC_INIT *procs, int num)

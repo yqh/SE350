@@ -56,12 +56,14 @@ int ae_init(PROC_INIT *proc_info, int num, int (*cb_func) (void *(arg)), void *a
 }
 
 /**************************************************************************//**
- * @brief   	 call this function to end testing
+ * @brief   	 debugger .ini can reference this one to exit 
  *****************************************************************************/
-void ae_exit(void) 
+
+void ae_exit(void)
 {
     while(1);
 }
+
 
 /**************************************************************************//**
  * @brief   	ae_set_proc_info

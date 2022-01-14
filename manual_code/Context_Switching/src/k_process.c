@@ -191,6 +191,17 @@ int k_release_processor(void)
 	process_switch(p_pcb_old);
 	return RTX_OK;
 }
+
+int k_get_process_priority(int pid)
+{
+    return RTX_ERR;
+}
+
+int k_set_process_priority(int pid, int prio_new) 
+{
+    return RTX_ERR;
+}
+
 /*
  *===========================================================================
  *                             END OF FILE

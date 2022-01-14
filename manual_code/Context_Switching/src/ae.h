@@ -27,6 +27,8 @@
 #ifndef _AE_H_
 #define _AE_H_
 
+#include "uart_polling.h"
+#include "printf.h"
 #include "rtx.h"
 
 /*

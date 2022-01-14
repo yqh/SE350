@@ -42,11 +42,9 @@
 #include <LPC17xx.h>
 #include <system_LPC17xx.h>
 #include "common.h"
-
-#ifdef DEBUG_0
 #include "uart_polling.h"
 #include "printf.h"
-#endif /* DEBUG_0 */
+
 
 /* process states, note we only assume three states in this example */
 typedef enum {NEW = 0, RDY, RUN} PROC_STATE_E;  
