@@ -1,0 +1,33 @@
+G99-TS111: START
+abcde
+fghij
+01234
+56789
+01234
+56789
+proc2 end of testing
+proc1 end of testing
+G99-TS111-LOG : real exec order: 1 -> 1 -> 2 -> 2 -> 2 -> 2 -> 2 -> 1 -> NIL
+G99-TS111-LOG : expt exec order: 1 -> 1 -> 2 -> 2 -> 2 -> 2 -> 2 -> 1 -> NIL
+G99-TS111-LOG : Test[0]-[0]: new task priority scheduling.
+G99-TS111-LOG : Test[0]-[0]: result = 1.
+G99-TS111-LOG : Test[0]-[1]: release_proc when current running proc. ready queue is empty.
+G99-TS111-LOG : Test[0]-[1]: result = 1.
+G99-TS111-LOG : Test[0]-[2]: set_proc_prio preemption, raising other lower prio proc's prio higher than the current running proc's prio .
+G99-TS111-LOG : Test[0]-[2]: result = 1.
+G99-TS111-LOG : Test[0]-[3]: release_proc when current running proc. ready queue is empty.
+G99-TS111-LOG : Test[0]-[3]: result = 1.
+G99-TS111-LOG : Test[0]-[4]: release_proc when current running proc. ready queue is empty.
+G99-TS111-LOG : Test[0]-[4]: result = 1.
+G99-TS111-LOG : Test[0]-[5]: release_proc when current running proc. ready queue is empty.
+G99-TS111-LOG : Test[0]-[5]: result = 1.
+G99-TS111-LOG : Test[0]-[6]: set_proc_prio no preemption, raising other lower prio proc's prio to the same as the current running proc's.
+G99-TS111-LOG : Test[0]-[6]: result = 1.
+G99-TS111-LOG : Test[0]-[7]: release_proc when current running proc. ready queue is not empty .
+G99-TS111-LOG : Test[0]-[7]: result = 1.
+G99-TS111: FINISHED
+G99-TS111-LOG : Test 0: 8/8 PASSED. Expected = 0xFF, result = 0xFF
+G99-TS111: 1/1 test function(s) COMPLETED.
+G99-TS111: 8/8 tests PASSED.
+G99-TS111: 0/8 tests FAILED.
+G99-TS111: END

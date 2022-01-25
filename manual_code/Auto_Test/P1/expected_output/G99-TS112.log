@@ -1,0 +1,81 @@
+G99-TS112: START
+ABCDE
+FGHIJ
+KLMNO
+PQRST
+UVWXY
+ZABCD
+EFGHI
+JKLMN
+OPQRS
+TUVWX
+YZABC
+DEFGH
+IJKLM
+NOPQR
+STUVW
+XYZAB
+CDEFG
+HIJKL
+MNOPQ
+RSTUV
+WXYZA
+BCDEF
+GHIJK
+LMNOP
+QRSTU
+VWXYZ
+ABCDE
+FGHIJ
+KLMNO
+PQRST
+UVWXY
+ZABCD
+01234
+G99-TS112-LOG2: PID = 2, proc2 releasing memory block owned by itself
+EFGHI
+G99-TS112-LOG : Test[0]-[0]: .
+G99-TS112-LOG : Test[0]-[0]: result = 1.
+56789
+G99-TS112-LOG2: PID = 2, proc2 releasing memory block owned by proc1
+G99-TS112-LOG : Test[0]-[0]: .
+G99-TS112-LOG : Test[0]-[0]: result = 1.
+proc2: end of testing
+G99-TS112-LOG2: PID = 2, proc2 changes its own priority to MEDIUM
+G99-TS112-LOG : Test[0]-[1]: set_prio of PID = 2  to MEDIUM, check return value.
+G99-TS112-LOG : Test[0]-[1]: result = 1.
+proc3: 
+proc4: 
+proc3: 
+proc4: 
+proc3: 
+proc4: 
+proc3: 
+proc4: 
+proc3: 
+proc4: 
+G99-TS112-LOG : real exec order: 2 -> 1 -> 1 -> 2 -> 1 -> 2 -> 2 -> 2 -> 2 -> 2 -> 3 -> 4 -> 3 -> 4 -> 3 -> 4 -> 3 -> 4 -> 3 -> 4 -> NIL
+G99-TS112-LOG : expt exec order: 2 -> 1 -> 1 -> 2 -> 1 -> 2 -> 2 -> 2 -> 2 -> 2 -> 3 -> 4 -> 3 -> 4 -> 3 -> 4 -> 3 -> 4 -> 3 -> 4 -> NIL
+G99-TS112-LOG : Test[1]-[0]: new task priority scheduling.
+G99-TS112-LOG : Test[1]-[0]: result = 1.
+G99-TS112-LOG : Test[1]-[1]: set_prio preemption, lower down current running proc's prio.
+G99-TS112-LOG : Test[1]-[1]: result = 1.
+G99-TS112-LOG : Test[1]-[2]: memory depletion.
+G99-TS112-LOG : Test[1]-[2]: result = 1.
+G99-TS112-LOG : Test[1]-[3]: blocked on memory.
+G99-TS112-LOG : Test[1]-[3]: result = 1.
+G99-TS112-LOG : Test[1]-[4]: release memory preemption.
+G99-TS112-LOG : Test[1]-[4]: result = 1.
+G99-TS112-LOG : Test[1]-[5]: blocked on memory.
+G99-TS112-LOG : Test[1]-[5]: result = 1.
+G99-TS112-LOG : Test[1]-[6]: set prio no preemption.
+G99-TS112-LOG : Test[1]-[6]: result = 1.
+G99-TS112-LOG : Test[1]-[7]: release_proc with blocked on memory proc existing.
+G99-TS112-LOG : Test[1]-[7]: result = 1.
+G99-TS112: FINISHED
+G99-TS112-LOG : Test 0: 2/2 PASSED. Expected = 0x3, result = 0x3
+G99-TS112-LOG : Test 1: 8/8 PASSED. Expected = 0xFF, result = 0xFF
+G99-TS112: 2/2 test function(s) COMPLETED.
+G99-TS112: 10/10 tests PASSED.
+G99-TS112: 0/10 tests FAILED.
+G99-TS112: END
