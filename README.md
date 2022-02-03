@@ -30,5 +30,8 @@ This directory contains the lab manual.
 ### `manual_code`
 This directory contains starter code of each lab.
 
+### `scripts`
+This directory contains some utility scripts.
+
 ### `submission`
-This directory contains template files for project submissions.
+This directory may not present for certain offerings. It contains template files for project submissions.
