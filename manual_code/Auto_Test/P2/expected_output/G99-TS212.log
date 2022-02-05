@@ -1,0 +1,30 @@
+G99-TS212: START
+proc2: entering...
+proc1: entering...
+proc3:
+proc2:
+proc1: tm.sec = 0, tm.nsec = 9121060
+proc1: public test TS212: dealyed_send with 10ms PASSED.
+G99-TS212-LOG : Test[0]-[0]: PID = 1: received a message by dealyed_send with 10ms.
+G99-TS212-LOG : Test[0]-[0]: result = 1.
+G99-TS212-LOG : real exec order: 2 -> 1 -> 1 -> 3 -> 2 -> 1 -> NIL
+G99-TS212-LOG : expt exec order: 2 -> 1 -> 1 -> 3 -> 2 -> 1 -> NIL
+G99-TS212-LOG : Test[1]-[0]: message passing preemption test.
+G99-TS212-LOG : Test[1]-[0]: result = 1.
+G99-TS212-LOG : Test[1]-[1]: message passing preemption test.
+G99-TS212-LOG : Test[1]-[1]: result = 1.
+G99-TS212-LOG : Test[1]-[2]: message passing preemption test.
+G99-TS212-LOG : Test[1]-[2]: result = 1.
+G99-TS212-LOG : Test[1]-[3]: message passing preemption test.
+G99-TS212-LOG : Test[1]-[3]: result = 1.
+G99-TS212-LOG : Test[1]-[4]: message passing preemption test.
+G99-TS212-LOG : Test[1]-[4]: result = 1.
+G99-TS212-LOG : Test[1]-[5]: message passing preemption test.
+G99-TS212-LOG : Test[1]-[5]: result = 1.
+G99-TS212: FINISHED
+G99-TS212-LOG : Test 0: 1/1 PASSED. Expected = 0x1, result = 0x1
+G99-TS212-LOG : Test 1: 6/6 PASSED. Expected = 0x3F, result = 0x3F
+G99-TS212: 2/2 test function(s) COMPLETED.
+G99-TS212: 7/7 tests PASSED.
+G99-TS212: 0/7 tests FAILED.
+G99-TS212: END

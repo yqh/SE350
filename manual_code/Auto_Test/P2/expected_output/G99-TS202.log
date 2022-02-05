@@ -1,0 +1,6 @@
+proc2: entering...
+proc1: entering...
+proc3:
+proc2:
+proc1: tm.sec = 0, tm.nsec = 9220540
+proc1: public test TS202: dealyed_send with 10ms PASSED.

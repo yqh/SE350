@@ -1,0 +1,14 @@
+The Timer0_IRQ program is to demonstrate how to program timer0 interrupt.
+The Timer0_IRQ program is available in different targets:
+
+ - Timer IRQ SIM:
+   - Compiler:                  ARM Compiler Default Version 5
+   - Configured for simulator debugger
+
+ - Timer IRQ RAM:
+   - Compiler:                  ARM Compiler Default Version 5
+   - Runs from Internal RAM located on chip
+     (may be used for target debugging)
+
+Expected behavior: 
+Prints to COM1 0-9, one digit a time every second by polling. The program loops around when 9 is reached.

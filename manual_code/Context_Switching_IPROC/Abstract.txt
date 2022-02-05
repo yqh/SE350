@@ -1,0 +1,58 @@
+The Context_Switching_IPROC project is to demonstrate how to context switch between two  processes by both sofware and hardware interrupts.
+To enable Timer Interrupts, TIMER_IPROC preprocessor needs to be defined.
+
+The Context_Switching_IPROC program is available in different targets:
+
+ - CS Timer IPROC SIM:
+   - Compiler:                  ARM Compiler Default Version 5
+   - Configured for simulator debugger
+
+ - CS Timer IPROC RAM:
+   - Compiler:                  ARM Compiler Default Version 5
+   - Runs from Internal RAM located on chip
+     (may be used for target debugging)
+
+There are two thread mode privileged processes in the system: proc1 and proc2. Both output to COM1.
+
+The COM1 terminal uses polling mechanism and outputs the debugging messages when DEBUG_0 macro is defined.
+
+Expected behavior:
+
+proc1 switches to proc2 by calling release_processor. proc2 switches to proc1 periodically by timer interrupts. 
+proc 1 prints 5 upper case letters on each line
+proc 2 prints 5 single digits on each line
+
+Note there is a dummy loop added to introduce some delay.
+
+An excerpt of the output is as follows:
+-----------------
+Dereferencing Null to get inital SP = 0x100002f0
+Derefrencing Reset vector to get intial PC = 0x1d9
+ctrl = 0, We are at privileged level, so we can access SP.
+Read MSP = 0x10000280
+Read PSP = 0x0
+ctrl= 1, We are at unprivileged level, we cannot access SP.
+Cannot read MSP = 0x0
+Cannot read PSP = 0x0
+ABCDE
+proc1: releasing processor
+01234
+56789
+01234
+56789
+0123FGHIJ
+proc1: releasing processor
+4
+56789
+01234
+56789
+01234
+56KLMNO
+proc1: releasing processor
+789
+01
+...
+...
+-----------------
+
+Note the public testing suites under AE-pub-inactive source group will HardFault on the hardware using this project.

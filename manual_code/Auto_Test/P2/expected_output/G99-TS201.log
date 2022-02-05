@@ -1,0 +1,32 @@
+proc2: receiving messages ...
+proc1: requesting a mem_blk...
+proc1: send messages to proc2...
+proc2: got a message - A
+abcde
+ABCDE
+proc1: send a message to proc2...
+proc2: got a message - 0
+fghij
+FGHIJ
+proc1: send a message to proc2...
+proc2: got a message - 1
+klmno
+KLMNO
+proc1: send a message to proc2...
+proc2: got a message - 2
+pqrst
+PQRST
+proc1: send a message to proc2...
+proc2: got a message - 3
+uvwxy
+UVWXY
+proc1: send a message to proc2...
+proc2: got a message - 4
+proc3: entering..., starting delay_send
+proc3: done with delay_send
+proc4: entering...
+proc4: received e
+proc4: received d
+proc4: received c
+proc4: received b
+proc4: received a
