@@ -140,9 +140,9 @@ PCB *scheduler(void)
 }
 
 /**************************************************************************//**
- * @brief     pick the next pcb when periodically 
+ * @brief     pick the next pcb periodically 
  *            SIM_TARGET: period = 200 clock ticks
- *            otherwise:   period = 6000 clock ticks
+ *            otherwise:   period = 12000 clock ticks
  * @return    PCB pointer of the next to run process
  *            NULL if error happens
  * @post      if gp_current_process was NULL, then it gets set to pcbs[0].
