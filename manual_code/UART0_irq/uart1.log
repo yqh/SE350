@@ -1,0 +1,145 @@
+COM1> Type a character at COM0 terminal
+Entering c_UART0_IRQHandler
+Reading a char = aa
+Entering c_UART0_IRQHandler
+Writing a char = Y Y
+Entering c_UART0_IRQHandler
+Writing a char = o o
+Entering c_UART0_IRQHandler
+Writing a char = u u
+Entering c_UART0_IRQHandler
+Writing a char =    
+Entering c_UART0_IRQHandler
+Writing a char = T T
+Entering c_UART0_IRQHandler
+Writing a char = y y
+Entering c_UART0_IRQHandler
+Writing a char = p p
+Entering c_UART0_IRQHandler
+Writing a char = e e
+Entering c_UART0_IRQHandler
+Writing a char = d d
+Entering c_UART0_IRQHandler
+Writing a char =    
+Entering c_UART0_IRQHandler
+Writing a char = a a
+Entering c_UART0_IRQHandler
+Writing a char =    
+Entering c_UART0_IRQHandler
+Writing a char = a a
+Entering c_UART0_IRQHandler
+Writing a char =  
+Entering c_UART0_IRQHandler
+Writing a char = 
+ 
+
+Entering c_UART0_IRQHandler
+Finish writing. Turning off IER_THRE
+Entering c_UART0_IRQHandler
+Reading a char = bb
+Entering c_UART0_IRQHandler
+Writing a char = Y Y
+Entering c_UART0_IRQHandler
+Writing a char = o o
+Entering c_UART0_IRQHandler
+Writing a char = u u
+Entering c_UART0_IRQHandler
+Writing a char =    
+Entering c_UART0_IRQHandler
+Writing a char = T T
+Entering c_UART0_IRQHandler
+Writing a char = y y
+Entering c_UART0_IRQHandler
+Writing a char = p p
+Entering c_UART0_IRQHandler
+Writing a char = e e
+Entering c_UART0_IRQHandler
+Writing a char = d d
+Entering c_UART0_IRQHandler
+Writing a char =    
+Entering c_UART0_IRQHandler
+Writing a char = a a
+Entering c_UART0_IRQHandler
+Writing a char =    
+Entering c_UART0_IRQHandler
+Writing a char = b b
+Entering c_UART0_IRQHandler
+Writing a char =  
+Entering c_UART0_IRQHandler
+Writing a char = 
+ 
+
+Entering c_UART0_IRQHandler
+Finish writing. Turning off IER_THRE
+Entering c_UART0_IRQHandler
+Reading a char = cc
+Entering c_UART0_IRQHandler
+Writing a char = Y Y
+Entering c_UART0_IRQHandler
+Writing a char = o o
+Entering c_UART0_IRQHandler
+Writing a char = u u
+Entering c_UART0_IRQHandler
+Writing a char =    
+Entering c_UART0_IRQHandler
+Writing a char = T T
+Entering c_UART0_IRQHandler
+Writing a char = y y
+Entering c_UART0_IRQHandler
+Writing a char = p p
+Entering c_UART0_IRQHandler
+Writing a char = e e
+Entering c_UART0_IRQHandler
+Writing a char = d d
+Entering c_UART0_IRQHandler
+Writing a char =    
+Entering c_UART0_IRQHandler
+Writing a char = a a
+Entering c_UART0_IRQHandler
+Writing a char =    
+Entering c_UART0_IRQHandler
+Writing a char = c c
+Entering c_UART0_IRQHandler
+Writing a char =  
+Entering c_UART0_IRQHandler
+Writing a char = 
+ 
+
+Entering c_UART0_IRQHandler
+Finish writing. Turning off IER_THRE
+Entering c_UART0_IRQHandler
+Reading a char = dd
+Entering c_UART0_IRQHandler
+Writing a char = Y Y
+Entering c_UART0_IRQHandler
+Writing a char = o o
+Entering c_UART0_IRQHandler
+Writing a char = u u
+Entering c_UART0_IRQHandler
+Writing a char =    
+Entering c_UART0_IRQHandler
+Writing a char = T T
+Entering c_UART0_IRQHandler
+Writing a char = y y
+Entering c_UART0_IRQHandler
+Writing a char = p p
+Entering c_UART0_IRQHandler
+Writing a char = e e
+Entering c_UART0_IRQHandler
+Writing a char = d d
+Entering c_UART0_IRQHandler
+Writing a char =    
+Entering c_UART0_IRQHandler
+Writing a char = a a
+Entering c_UART0_IRQHandler
+Writing a char =    
+Entering c_UART0_IRQHandler
+Writing a char = d d
+Entering c_UART0_IRQHandler
+Writing a char =  
+Entering c_UART0_IRQHandler
+Writing a char = 
+ 
+
+Entering c_UART0_IRQHandler
+Finish writing. Turning off IER_THRE
