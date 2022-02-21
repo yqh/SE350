@@ -49,27 +49,27 @@ extern uint8_t g_char_in;
 
 int main()
 {
-	LPC_UART_TypeDef *pUart;
-	
-	SystemInit();	
-	__disable_irq();
-	
-	uart_irq_init(0); // uart0 interrupt driven, for RTX console 
-	uart_init(1);     // uart1 polling, for debugging
-	init_printf(NULL, putc);    // printf uses the polling terminal
+    LPC_UART_TypeDef *pUart;
+    
+    SystemInit();    
+    __disable_irq();
+    
+    uart_irq_init(0); // uart0 interrupt driven, for RTX console 
+    uart_init(1);     // uart1 polling, for debugging
+    init_printf(NULL, putc);    // printf uses the polling terminal
 
-	__enable_irq();
+    __enable_irq();
 
-	uart1_put_string("COM1> Type a character at COM0 terminal\n\r");
+    uart1_put_string("COM1> Type a character at COM0 terminal\n\r");
 
-	pUart = (LPC_UART_TypeDef *) LPC_UART0;	
-	while( 1 ) {	
-		if (g_send_char == 1) {	    // This flag is set by the IRQ handler upon an RX interrupt
+    pUart = (LPC_UART_TypeDef *) LPC_UART0;    
+    while( 1 ) {    
+        if (g_send_char == 1) {        // This flag is set by the IRQ handler upon an RX interrupt
             //pUart->THR &= ~IER_THRE;// turn off TX interrupt if it is on. But in this example, TX interrupt is off by the time we reach here
             pUart->THR = g_char_in; // the THR must be empty at this moment
             pUart->IER |= IER_THRE; // turn on the TX interrupt
             g_send_char = 0;        // clear the flag
-		}
+        }
     }
 }
 
