@@ -178,7 +178,6 @@ int uart_irq_init(int n_uart) {
         return 1; /* not supported yet */
     }
     
-    //pUart->THR = '\0';
     return 0;
 }
 
