@@ -3,7 +3,7 @@
  *
  *                  UNIVERSITY OF WATERLOO SE 350 RTX LAB  
  *
- *        Copyright 2020-2021 Yiqing Huang and NXP Semiconductors
+ *        Copyright 2020-2022 Yiqing Huang and NXP Semiconductors
  *                          All rights reserved.
  *---------------------------------------------------------------------------
  *  Redistribution and use in source and binary forms, with or without
@@ -30,9 +30,9 @@
  *              and then writes a string containing the input char through
  *              TX interrupts. 
  *              
- * @version     V1.2021.01
+ * @version     V1.2022.02
  * @authors     Yiqing Huang and NXP Semiconductors
- * @date        2021 JAN
+ * @date        2022 FEB 
  *****************************************************************************/
 #include <LPC17xx.h>
 #include "uart_irq.h"
