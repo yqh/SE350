@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\SIM\uart0irq_uart1polling.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\SIM\uart0irq_uart1polling.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Mon Feb 21 15:11:59 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Thu Feb 24 22:48:19 2022
 <BR><P>
 <H3>Maximum Stack Usage =        136 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -444,7 +444,7 @@ Global Symbols
 
 <P><STRONG><a name="[81]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, indicate_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[52]"></a>init_printf</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, printf.o(i.init_printf))
+<P><STRONG><a name="[51]"></a>init_printf</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, printf.o(i.init_printf))
 <BR><BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -453,23 +453,22 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx.o(.text)
 </UL>
-<P><STRONG><a name="[46]"></a>c_UART0_IRQHandler</STRONG> (Thumb, 164 bytes, Stack size 16 bytes, uart_irq.o(i.c_UART0_IRQHandler))
+<P><STRONG><a name="[46]"></a>c_UART0_IRQHandler</STRONG> (Thumb, 130 bytes, Stack size 16 bytes, uart_irq.o(i.c_UART0_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = c_UART0_IRQHandler &rArr; tfp_printf &rArr; tfp_format &rArr; putchw
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_put_char
-<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tfp_printf
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_put_string
+<BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tfp_printf
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_put_string
 </UL>
 <BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_IRQHandler
 </UL>
 
-<P><STRONG><a name="[40]"></a>main</STRONG> (Thumb, 70 bytes, Stack size 0 bytes, main_uart_irq.o(i.main))
+<P><STRONG><a name="[40]"></a>main</STRONG> (Thumb, 90 bytes, Stack size 0 bytes, main_uart_irq.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = main &rArr; uart_irq_init &rArr; __NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_put_string
-<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_irq_init
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_init
-<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_printf
+<BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_put_string
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_irq_init
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_init
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_printf
 <LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
@@ -478,23 +477,23 @@ Global Symbols
 <P><STRONG><a name="[33]"></a>putc</STRONG> (Thumb, 28 bytes, Stack size 12 bytes, uart_polling.o(i.putc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = putc &rArr; uart_put_string
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_put_char
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_put_string
+<BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_put_char
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_put_string
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main_uart_irq.o(i.main)
 </UL>
 <P><STRONG><a name="[53]"></a>tfp_format</STRONG> (Thumb, 296 bytes, Stack size 56 bytes, printf.o(i.tfp_format))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = tfp_format &rArr; putchw
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ui2a
+<BR>[Calls]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ui2a
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;putchw
-<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2a
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2a
 <LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;a2i
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tfp_printf
+<BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tfp_printf
 </UL>
 
-<P><STRONG><a name="[4d]"></a>tfp_printf</STRONG> (Thumb, 34 bytes, Stack size 24 bytes, printf.o(i.tfp_printf))
+<P><STRONG><a name="[4b]"></a>tfp_printf</STRONG> (Thumb, 34 bytes, Stack size 24 bytes, printf.o(i.tfp_printf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = tfp_printf &rArr; tfp_format &rArr; putchw
 </UL>
 <BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tfp_format
@@ -502,11 +501,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;c_UART0_IRQHandler
 </UL>
 
-<P><STRONG><a name="[51]"></a>uart_init</STRONG> (Thumb, 96 bytes, Stack size 0 bytes, uart_polling.o(i.uart_init))
+<P><STRONG><a name="[50]"></a>uart_init</STRONG> (Thumb, 96 bytes, Stack size 0 bytes, uart_polling.o(i.uart_init))
 <BR><BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[50]"></a>uart_irq_init</STRONG> (Thumb, 144 bytes, Stack size 16 bytes, uart_irq.o(i.uart_irq_init))
+<P><STRONG><a name="[4f]"></a>uart_irq_init</STRONG> (Thumb, 144 bytes, Stack size 16 bytes, uart_irq.o(i.uart_irq_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = uart_irq_init &rArr; __NVIC_SetPriority
 </UL>
 <BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
@@ -515,16 +514,15 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[4c]"></a>uart_put_char</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, uart_polling.o(i.uart_put_char))
-<BR><BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;c_UART0_IRQHandler
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_put_string
+<P><STRONG><a name="[52]"></a>uart_put_char</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, uart_polling.o(i.uart_put_char))
+<BR><BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_put_string
 <LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;putc
 </UL>
 
-<P><STRONG><a name="[4b]"></a>uart_put_string</STRONG> (Thumb, 38 bytes, Stack size 12 bytes, uart_polling.o(i.uart_put_string))
+<P><STRONG><a name="[4c]"></a>uart_put_string</STRONG> (Thumb, 38 bytes, Stack size 12 bytes, uart_polling.o(i.uart_put_string))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = uart_put_string
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_put_char
+<BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_put_char
 </UL>
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;c_UART0_IRQHandler
 <LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;putc
@@ -546,10 +544,10 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tfp_format
 </UL>
 
-<P><STRONG><a name="[4e]"></a>i2a</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, printf.o(i.i2a))
+<P><STRONG><a name="[4d]"></a>i2a</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, printf.o(i.i2a))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = i2a &rArr; ui2a
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ui2a
+<BR>[Calls]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ui2a
 </UL>
 <BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tfp_format
 </UL>
@@ -560,21 +558,21 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tfp_format
 </UL>
 
-<P><STRONG><a name="[4f]"></a>ui2a</STRONG> (Thumb, 86 bytes, Stack size 20 bytes, printf.o(i.ui2a))
+<P><STRONG><a name="[4e]"></a>ui2a</STRONG> (Thumb, 86 bytes, Stack size 20 bytes, printf.o(i.ui2a))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = ui2a
 </UL>
 <BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tfp_format
-<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2a
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2a
 </UL>
 
 <P><STRONG><a name="[56]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, uart_irq.o(i.__NVIC_EnableIRQ))
-<BR><BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_irq_init
+<BR><BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_irq_init
 </UL>
 
 <P><STRONG><a name="[55]"></a>__NVIC_SetPriority</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, uart_irq.o(i.__NVIC_SetPriority))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __NVIC_SetPriority
 </UL>
-<BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_irq_init
+<BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_irq_init
 </UL>
 <P>
 <H3>

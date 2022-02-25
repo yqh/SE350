@@ -28,8 +28,8 @@
 
 /**************************************************************************//**
  * @file        main_uart_irq.c
- * @brief       main routine for echoing user input through UART0 by interrupt.
- *              uart1 is by polling. It is used as a debugging terminal. 
+ * @brief       echoes keyboard input and outputs a string to UART0 by interrupt.
+ *              UART1 is by polling. It is used as a debugging terminal. 
  *              
  * @version     V1.2022.02
  * @authors     Yiqing Huang
@@ -43,9 +43,10 @@
 #include "uart_polling.h"
 #include "printf.h"
 
-
+uint8_t g_buffer[]= "You Typed a Q\r\n";    // g_buffer[12] = 'Q'
 extern uint8_t g_send_char;
 extern uint8_t g_char_in;
+extern uint8_t g_tx_irq;
 
 int main()
 {
@@ -64,11 +65,12 @@ int main()
 
     pUart = (LPC_UART_TypeDef *) LPC_UART0;    
     while( 1 ) {    
-        if (g_send_char == 1) {        // This flag is set by the IRQ handler upon an RX interrupt
-            //pUart->THR &= ~IER_THRE;// turn off TX interrupt if it is on. But in this example, TX interrupt is off by the time we reach here
-            pUart->THR = g_char_in; // the THR must be empty at this moment
-            pUart->IER |= IER_THRE; // turn on the TX interrupt
-            g_send_char = 0;        // clear the flag
+        if (g_send_char == 1 && !g_tx_irq) {   // these flags are also written by the IRQ handler
+            pUart->THR = g_char_in;     // the THR must be empty at this moment
+            g_tx_irq = 1;               // tx irq is to be ON
+            g_send_char = 0;            // clear the flag
+            g_buffer[12] = g_char_in;   // replace Q by the g_char_in in the buffer.
+            pUart->IER |= IER_THRE;     // turn on the TX interrupt to output g_buffer contents  
         }
     }
 }

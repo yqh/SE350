@@ -1,145 +1,39 @@
 COM1> Type a character at COM0 terminal
-Entering c_UART0_IRQHandler
-Reading a char = aa
-Entering c_UART0_IRQHandler
-Writing a char = Y Y
-Entering c_UART0_IRQHandler
-Writing a char = o o
-Entering c_UART0_IRQHandler
-Writing a char = u u
-Entering c_UART0_IRQHandler
-Writing a char =    
-Entering c_UART0_IRQHandler
-Writing a char = T T
-Entering c_UART0_IRQHandler
-Writing a char = y y
-Entering c_UART0_IRQHandler
-Writing a char = p p
-Entering c_UART0_IRQHandler
-Writing a char = e e
-Entering c_UART0_IRQHandler
-Writing a char = d d
-Entering c_UART0_IRQHandler
-Writing a char =    
-Entering c_UART0_IRQHandler
-Writing a char = a a
-Entering c_UART0_IRQHandler
-Writing a char =    
-Entering c_UART0_IRQHandler
-Writing a char = a a
-Entering c_UART0_IRQHandler
-Writing a char =  
-Entering c_UART0_IRQHandler
-Writing a char = 
- 
-
-Entering c_UART0_IRQHandler
-Finish writing. Turning off IER_THRE
-Entering c_UART0_IRQHandler
-Reading a char = bb
-Entering c_UART0_IRQHandler
-Writing a char = Y Y
-Entering c_UART0_IRQHandler
-Writing a char = o o
-Entering c_UART0_IRQHandler
-Writing a char = u u
-Entering c_UART0_IRQHandler
-Writing a char =    
-Entering c_UART0_IRQHandler
-Writing a char = T T
-Entering c_UART0_IRQHandler
-Writing a char = y y
-Entering c_UART0_IRQHandler
-Writing a char = p p
-Entering c_UART0_IRQHandler
-Writing a char = e e
-Entering c_UART0_IRQHandler
-Writing a char = d d
-Entering c_UART0_IRQHandler
-Writing a char =    
-Entering c_UART0_IRQHandler
-Writing a char = a a
-Entering c_UART0_IRQHandler
-Writing a char =    
-Entering c_UART0_IRQHandler
-Writing a char = b b
-Entering c_UART0_IRQHandler
-Writing a char =  
-Entering c_UART0_IRQHandler
-Writing a char = 
- 
-
-Entering c_UART0_IRQHandler
-Finish writing. Turning off IER_THRE
-Entering c_UART0_IRQHandler
-Reading a char = cc
-Entering c_UART0_IRQHandler
-Writing a char = Y Y
-Entering c_UART0_IRQHandler
-Writing a char = o o
-Entering c_UART0_IRQHandler
-Writing a char = u u
-Entering c_UART0_IRQHandler
-Writing a char =    
-Entering c_UART0_IRQHandler
-Writing a char = T T
-Entering c_UART0_IRQHandler
-Writing a char = y y
-Entering c_UART0_IRQHandler
-Writing a char = p p
-Entering c_UART0_IRQHandler
-Writing a char = e e
-Entering c_UART0_IRQHandler
-Writing a char = d d
-Entering c_UART0_IRQHandler
-Writing a char =    
-Entering c_UART0_IRQHandler
-Writing a char = a a
-Entering c_UART0_IRQHandler
-Writing a char =    
-Entering c_UART0_IRQHandler
-Writing a char = c c
-Entering c_UART0_IRQHandler
-Writing a char =  
-Entering c_UART0_IRQHandler
-Writing a char = 
- 
-
-Entering c_UART0_IRQHandler
-Finish writing. Turning off IER_THRE
-Entering c_UART0_IRQHandler
-Reading a char = dd
-Entering c_UART0_IRQHandler
-Writing a char = Y Y
-Entering c_UART0_IRQHandler
-Writing a char = o o
-Entering c_UART0_IRQHandler
-Writing a char = u u
-Entering c_UART0_IRQHandler
-Writing a char =    
-Entering c_UART0_IRQHandler
-Writing a char = T T
-Entering c_UART0_IRQHandler
-Writing a char = y y
-Entering c_UART0_IRQHandler
-Writing a char = p p
-Entering c_UART0_IRQHandler
-Writing a char = e e
-Entering c_UART0_IRQHandler
-Writing a char = d d
-Entering c_UART0_IRQHandler
-Writing a char =    
-Entering c_UART0_IRQHandler
-Writing a char = a a
-Entering c_UART0_IRQHandler
-Writing a char =    
-Entering c_UART0_IRQHandler
-Writing a char = d d
-Entering c_UART0_IRQHandler
-Writing a char =  
-Entering c_UART0_IRQHandler
-Writing a char = 
- 
-
-Entering c_UART0_IRQHandler
-Finish writing. Turning off IER_THRE
+Reading a char = a 
+char a gets processeda
+You Typed a a
+Reading a char = b 
+char b gets processedb
+You Typed a b
+Reading a char = c 
+char c gets processedc
+You Typed a c
+Reading a char = d 
+char d gets processedd
+You Typed a d
+Reading a char = e 
+char e gets processede
+You Typed a e
+Reading a char = f 
+char f gets processedf
+You Typed a f
+Reading a char = c 
+char c gets processed
+Reading a char = b 
+Reading a char = c 
+Reading a char = b 
+Reading a char = c 
+Reading a char = b 
+Reading a char = c 
+Reading a char = b 
+Reading a char = c 
+Reading a char = b 
+Reading a char = c 
+Reading a char = c 
+Reading a char = b 
+Reading a char = c 
+Reading a char = b 
+Reading a char = c 
+Reading a char = b 
+Reading a char = c c
+You Typed a c

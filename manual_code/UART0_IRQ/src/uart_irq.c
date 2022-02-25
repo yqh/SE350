@@ -41,12 +41,13 @@
 #include "printf.h"
 #endif
 
+extern uint8_t g_buffer[];                  // defined in main_uart_irq.c
 
-uint8_t g_buffer[]= "You Typed a Q\r\n";
-uint8_t *gp_buffer = g_buffer;
-uint8_t g_send_char = 0;
-uint8_t g_char_in;
-uint8_t g_char_out;
+static uint8_t *gp_buffer = g_buffer;       // TX IRQ read/write this var      
+uint8_t g_send_char = 0;                    // main() read/write this flag
+uint8_t g_char_in;                          // main() read this var
+uint8_t g_tx_irq = 0;                       // initial TX irq is off
+
 
 /**************************************************************************//**
  * @brief: initialize the n_uart
@@ -207,37 +208,43 @@ void c_UART0_IRQHandler(void)
     uint8_t IIR_IntId;        /* Interrupt ID from IIR */          
     LPC_UART_TypeDef *pUart = (LPC_UART_TypeDef *)LPC_UART0;
     
-#ifdef DEBUG_0
+#ifdef DEBUG_1
     uart1_put_string("Entering c_UART0_IRQHandler\r\n");
-#endif // DEBUG_0
+#endif // DEBUG_1
 
     /* Reading IIR automatically acknowledges the interrupt */
     IIR_IntId = (pUart->IIR) >> 1 ; /* skip pending bit in IIR */ 
     if (IIR_IntId & IIR_RDA) { /* Receive Data Avaialbe */
+        
         /* Read UART. Reading RBR will clear the interrupt */
-        g_char_in = pUart->RBR;
+        int char_in = pUart->RBR;
 #ifdef DEBUG_0
-        uart1_put_string("Reading a char = ");
-        uart1_put_char(g_char_in);
-        uart1_put_string("\r\n");
-#endif /* DEBUG_0 */        
-        g_buffer[12] = g_char_in; /* nasty hack */
-        g_send_char = 1;
+        printf("Reading a char = %c \r\n", char_in);
+#endif /* DEBUG_0 */ 
+        if (g_send_char == 0 && !g_tx_irq) {
+            g_char_in = char_in;
+#ifdef DEBUG_0
+            printf("char %c gets processed\r\n", g_char_in);
+#endif /* DEBUG_0 */ 
+            g_send_char = 1;
+        }
     } else if (IIR_IntId & IIR_THRE) {
+        uint8_t g_char_out;
         /* THRE Interrupt, transmit holding register becomes empty */
         if (*gp_buffer != '\0' ) {  // not end of the string yet
             g_char_out = *gp_buffer;
-#ifdef DEBUG_0
+#ifdef DEBUG_1
             printf("Writing a char = %c \r\n", g_char_out);
-#endif /* DEBUG_0 */            
+#endif /* DEBUG_1 */            
             pUart->THR = g_char_out;
             gp_buffer++;
-        } else {    // end of the string
-#ifdef DEBUG_0
+        } else { // end of the string
+#ifdef DEBUG_1
             uart1_put_string("Finish writing. Turning off IER_THRE\r\n");
-#endif /* DEBUG_0 */
+#endif /* DEBUG_1 */
             pUart->IER &= ~IER_THRE; // clear the IER_THRE bit 
-            gp_buffer = g_buffer;   // reset the buffer     
+            g_tx_irq = 0;
+            gp_buffer = g_buffer;    // reset the buffer  
         }          
     } else {  /* not implemented yet */
 #ifdef DEBUG_0
