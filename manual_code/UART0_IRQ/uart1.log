@@ -1,39 +1,0 @@
-COM1> Type a character at COM0 terminal
-Reading a char = a 
-char a gets processeda
-You Typed a a
-Reading a char = b 
-char b gets processedb
-You Typed a b
-Reading a char = c 
-char c gets processedc
-You Typed a c
-Reading a char = d 
-char d gets processedd
-You Typed a d
-Reading a char = e 
-char e gets processede
-You Typed a e
-Reading a char = f 
-char f gets processedf
-You Typed a f
-Reading a char = c 
-char c gets processed
-Reading a char = b 
-Reading a char = c 
-Reading a char = b 
-Reading a char = c 
-Reading a char = b 
-Reading a char = c 
-Reading a char = b 
-Reading a char = c 
-Reading a char = b 
-Reading a char = c 
-Reading a char = c 
-Reading a char = b 
-Reading a char = c 
-Reading a char = b 
-Reading a char = c 
-Reading a char = b 
-Reading a char = c c
-You Typed a c
