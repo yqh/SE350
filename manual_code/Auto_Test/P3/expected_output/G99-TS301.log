@@ -1,0 +1,53 @@
+-----------------------------------------
+expected output at COM1 (polled terminal)
+-----------------------------------------
+proc2: receiving messages ...
+proc6: registering %A command
+proc1: requesting a mem_blk...
+proc1: send messages to proc2...
+proc2: got a message - A
+abcde
+ABCDE
+proc1: send a message to proc2...
+proc2: got a message - 0
+fghij
+FGHIJ
+proc1: send a message to proc2...
+proc2: got a message - 1
+klmno
+KLMNO
+proc1: send a message to proc2...
+proc2: got a message - 2
+pqrst
+PQRST
+proc1: send a message to proc2...
+proc2: got a message - 3
+uvwxy
+UVWXY
+proc1: send a message to proc2...
+proc2: got a message - 4
+proc3: entering..., starting delay_send
+proc3: done with delay_send
+proc4: entering...
+proc4: received a
+proc6: received a
+proc4: received b
+proc6: received b
+proc4: received c
+proc6: received c
+proc4: received d
+proc6: received d
+proc4: received e
+proc6: received e
+proc6: type %A in RTX console now.
+proc6: asking CRT to display :-):-D.
+proc6: type %A in RTX console now.
+....
+------------------------------------------------------
+expected output at COM0 (interrupt-driven terminal)
+------------------------------------------------------
+%A
+:-):-D
+-------------------------------------------------------
+It allows one to type %A<ENTER> multiple times.
+Eacho %A<ENTER> outputs ":-):-D".
