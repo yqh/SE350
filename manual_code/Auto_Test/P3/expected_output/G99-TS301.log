@@ -50,4 +50,4 @@ expected output at COM0 (interrupt-driven terminal)
 :-):-D
 -------------------------------------------------------
 It allows one to type %A<ENTER> multiple times.
-Eacho %A<ENTER> outputs ":-):-D".
+Each %A<ENTER> outputs ":-):-D".
