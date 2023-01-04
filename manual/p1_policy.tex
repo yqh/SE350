@@ -1,0 +1,151 @@
+%*******************************************************
+\section*{Lab Project Administration Policy }
+%*******************************************************
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Project Group Policy}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+    \item {\bf Group Size.} The project is done in groups of four. 
+        Five is not allowed and groups of less than four members is not recommended. 
+        There is no reduction in project deliverables regardless the size of the project group. 
+        Everyone in the group normally gets the same mark.
+        LEARN (\url{https://learn.uwaterloo.ca}) is used to signup for groups. 
+        {\em The project group signup is due by 08:30 am EST on Tuesday in the second week of
+        the academic term}.
+	Group sign-up weighs \verb+3%+ of the final lab grade (see Table \ref{tb_deadline}).
+    \item {\bf Group Split-up.} 
+        If you notice workload imbalance, try to solve it as soon as possible within your group or split-up the group as the last resort. 
+        Group split-up is only allowed once. Each member in the old group will lose the \verb+3%+ signup points.
+        We highly recommend everyone to stay with their group members as much as possible, for the ability to do team work will be an important skill in your future career.
+        Please choose your lab partners carefully and wisely. 
+        The code and documentation completed before the group split-up becomes intellectual property of each individual in the old group.
+    \item {\bf Group Split-up Deadline.} 
+        To split from your group for a particular project deliverable, 
+        you need to notify the lab instructor in writing and 
+        sign the group slip-up form in the appendix at least one week before the particular project deliverable is due.
+    \item {\bf Collaboration Policy}
+        Explaining concepts to someone in another group, discussing algorithms/testing strategies with other groups, helping someone from another group to debug their code, and searching online for generic algorithms (e.g., hash table) are allowed. 
+        Sharing code and test cases with another group, open-sourcing code (e.g., hosting code publicly on GitHub) even after this term, copying/reading other groups' code and test cases, and copying/reading online code and test cases from prior years are not allowed. 
+        Any suspected plagiarism or infractions of this honor code will be reported to the appropriate Associate Dean.
+\end{itemize}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Project Submission Policy.} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+    \item {\bf Project Deliverables.}
+        The lab project is divided into three deliverables. We will create GitLab repositories for all groups.
+        The submission is through GitLab by tagging the commit for submission with a special tag name (see Table \ref{tb_deadline}).
+    \item {\bf Late Submissions.} 
+        There are {\em three grace days}\footnote{Grace days are calendar days. Days in weekends are counted.}
+        that can be used for project deliverables late submissions without incurring any penalty.
+        %When you use up all your grace days, 
+        %a \verb+15%+ per day late penalty will be applied to a late submission.
+        {\em Submission is not accepted if it is more than three days late.}
+        Please be advised that to simplify the book-keeping, 
+        late submission is counted in the unit of day rather than hour or minute and is rounded up
+        to the nearest day. An hour late submission is one day late, so does a fifteen hour late submission.
+        Unless notified otherwise, we always take the latest submission from the Learn dropbox.
+\end{itemize}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{|p{8.4cm}|l|p{2.5cm}|l|}
+\hline
+\rowcolor{lightgray}
+\thead{Deliverable}                 & \thead{Weight} & \thead{Due Date} & \thead{Git Tag Name} \\ 
+\hline\hline
+P0 Group Sign-up                    &	\verb+3%+   & Jan 17 08:30 &             \\ \hline	
+P1 Memory and Task Management       &	\verb+33%+  & Feb 07 08:30 & p1-submit \\ \hline
+P2 Message Passing and 
+   and Timing Service               &	\verb+32%+  & Mar 07 08:30 & p2-submit \\ \hline
+P3 Console I/O and Stress Testing   &	\verb+32%+  & Apr 04 08:30 & p3-submit \\ \hline
+\end{tabular}
+\caption{Project Deliverable Weight and Deadlines. All times are in Estern Standard Time (US \& Canada).}
+\label{tb_deadline}
+\end{center}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Project Grading Policy.} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+    \item {\bf Project Grading Procedure.}
+        The project is graded by demonstration. We will evaluate your submitted commit (i.e. it could be different from your latest commit) during the demo. You will use your own testing cases to demonstrate you have completed the project requirements. We will also provide you our testing cases so that you can see how your code runs with a third party testing suite. We publish a small set of testing cases for each deliverable. We require students to demo that they pass these testing cases as well as some unseen cases. Please be advised that these public testing cases are by no means comprehensive and their main purpose is to get you started with writing you own testing cases by using the automated testing framework we have.  Writing your own testing cases to thoroughly test your code is part of the project requirements. Having unseen test cases is a common practice and we usually do not release the unseen cases after the demo. %If you are not able to pass the released public testing cases, then the maximum grade you will receive would be capped to 70.
+    \item {\bf Project Demo}
+        All group members need to present themselves in the demo. The demo time is not allowed to be exceeded. You will get zero points for the part you run out of time to demo. Note the demo session is not a debugging session and the evaluator will not help you to debug your code. 
+       % If you want to make changes to your code, you may do it within the given demo time slot. The first line of code change incurs \verb+10%+ grade deduction and the second line of code change incurs \verb+5%+ grade deduction. The rest of lines of changes incur \verb+1%+ per line deductions. Under no circumstances file replacement is allowed. Code modification is limited to use a text editor to type in the changes on the spot.   
+    \item {\bf Hardware vs. Simulator.}
+        Demos will be evaluated on the board connected to a Microsoft Windows 10 lab machine. Lab machines are accessible through \href{https://englab.uwaterloo.ca/}{ENGLab remote desktop session} when connected to the campus virtual private network (\href{https://uwaterloo.ca/information-systems-technology/services/virtual-private-network-vpn}{VPN}) if it is an online offering. A {\bf15\%} penalty will be applied to a deliverable that is only able to function on the simulator but not on the actual hardware.
+    \item {\bf Project Re-grading.}
+        Lab grades are usually finalized at the end of the demo and released by the end of the lab demo week. Re-grading requests need to be directly submitted through LEARN re-grading request dropboxes within two calendar days after the lab grade is released. You will need to write a detailed appeal document to support your request. Acceptable regrading request reasons are:
+      \begin{itemize}
+          \item There is a data entry error of your lab grades on LEARN.
+          \item You find a grading mistake. For example a bug in the unseen test code used in the demo.
+          \item You find the grading is unfair.
+      \end{itemize}
+          Name the regrading request document as \verb+G<gid>-P<pid>-regrade.pdf+, where \verb+gid+ is your group id and \verb+pid+ is the project id of 1, 2 or 3.
+          For example, \verb+G99-P2-regrade.pdf+ is the regrading request file submitted by Group 99 to appeal P2 grade.
+          Please do not email us your regrading request. Dropbox submissions will help everyone to keep good track of all regrading requests.
+          Your entire project will be re-evaluated and the chance that the new lab grade may be lower than your original lab grade exists.
+    \end{itemize}
+
+%*******************************************************
+\section*{Lab Repeating Policy}
+%*******************************************************
+For a student who repeats the course, labs need to be re-done with new lab partners. 
+Simply turning in the old lab code is not allowed. 
+We understand that the student may choose a similar route to the solution chosen last time 
+the course was taken. However it should not be identical. The labs will be done a second time,
+we expect that the student will improve the older solutions. Also the new lab partners should be 
+contributing equally, which will also lead to differences in the solutions. 
+
+Note that the policy is course specific to the discretion of the course instructor and the lab instructor.
+
+%*******************************************************
+\section*{Lab Solution Internet Policy} 
+%*******************************************************
+Publishing your solutions of lab projects including the source code and design documentation 
+% or lab report
+on the internet for public to access is a violation of academic integrity. Because this potentially enabling other groups to cheat the system in the current and future offerings of the course. For example, it is not acceptable to host a public repository on GitHub that contains your lab project solutions. A lab grade zero will automatically be assigned to the offender. 
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Seeking Help}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+    \item{\bf Discussion Forum.}
+        %We recommend students to use the Campuswire (\url{https://campuswire.com/})
+        We encourage students to use the Piazza (\url{https://piazza.com/})
+        to ask the teaching team questions instead of sending individual emails to lab teaching staff.
+        For a question related to a particular deliverable, our target response time is
+        one to two business day(s) before the deadline of the particular deliverable
+        \footnote{Our past experiences show that the number of questions spike when deadline is close.
+            The teaching staff will not be able to guarantee one business day response time when workload is
+            above average, though we always try our best to provide timely response.}. 
+        {\em After the deadline, there is no guarantee on the response time}.
+    \item{\bf Office Hours.} 
+        Lab office hours can be booked online. The booking website is posted in Learn. You must use your school email account when booking the appointment. Otherwise you may not receive the appointment confirmation email.
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Important Note}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  Teaching staff are not permitted to give students direct solution to lab project. Guidance and hints will be provided to help students to find solutions by themselves. This applies to debugging as well. Note that debugging is a non-trivial part of the work of the lab project. Teaching staff will not debug student's program for the student to complete the lab. Teaching staff will be able to demonstrate how to use the debugger and provide case specific debugging tips to help students better debug their programs.
+%-----------------------------------------------------------------
+
+%-----------------------------------------------------------------
+
+%=================================================================
+%                END OF TEXT
+%=================================================================
+
+
+% LocalWords:  APIs Keil mqueue ipcs multi gettimeofday README docx ecelinux
+% LocalWords:  startup
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main_book"
+%%% End:

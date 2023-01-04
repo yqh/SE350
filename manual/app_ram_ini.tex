@@ -1,0 +1,18 @@
+%\chapter{The RAM.ini File}
+\chapter{The Debugger Initialization Files}
+\label{app_debug_ini}
+
+The RAM.ini file in the starter code can be found in Listing \ref{lst_ram_ini}. It relocates the vector table to RAM and load the code for in-memory execution (i.e. not to the ROM). This will avoid wear-and-tear on the on-chip flash memory. \\
+
+\lstinputlisting[language=C, caption={The RAM.ini file}, label=lst_ram_ini]{code/RAM.ini}
+
+The \verb+SIM.ini+ file in the starter code can be found in Listing \ref{lst_sim_ini}. The simulator by default does not detect the second bank of RAM (i.e. IRAM2 in the Target page of the Target option window), which starts \verb+0x2007C000 + and and ends at \verb+0x20083FFF+. We use the \verb+MAP+ command to specify the memory access rights of this range of memory. We use \verb+SLOG+ command to log the UART output to a file. \\ 
+\pagebreak
+\lstinputlisting[language=C, caption={The SIM.ini file}, label=lst_sim_ini]{code/SIM.ini}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main_book"
+%%% End:

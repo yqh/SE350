@@ -1,0 +1,44 @@
+%------ PREEMBLE HEADER -----------
+
+%==========================================================
+% 3. COMMANDS 
+%==========================================================
+
+%--------------SETTINGS------------------------------------
+%******** Paragraph space, indentations*****
+\setlength{\parskip}{1ex}
+%\setlength{\parskip}{\baselineskip} % paragraph spacing
+%\setlength{\parindent}{0pt} % does not indent paragraphs
+
+
+%******** list spacing **********
+\setlist[itemize]{topsep=0pt}
+\setlist[enumerate]{topsep=0pt}
+
+%........ Re-numbering Floats.............
+\counterwithin{figure}{chapter}
+\counterwithin{table}{chapter}
+%\counterwithin{lstlisting}{section}
+
+%--------------NEW COMMANDS--------------------------------
+
+% simple customized highlight commands
+\newcommand{\hlc}[2][yellow]{ {\sethlcolor{#1} \hl{#2}} }
+\newcommand{\codeA}[1]{ {\sethlcolor{lightgray} \ttfamily{\hl{#1}}} }
+
+% round corner highlight, mono space font, for inline code/cmd 
+\newtcbox{\inline}[1][darkgray]{on line,
+arc=1pt,colback=#1!10!white,colframe=#1!10!white,
+before upper={\rule[-3pt]{0pt}{10pt}},boxrule=1pt,
+boxsep=0pt,left=1pt,right=1pt,top=1pt,bottom=1pt}
+\newcommand{\code}[1]{ \inline{\ttfamily{#1}} }
+
+% table header commands from makecell package
+\renewcommand\theadfont{\bfseries} % table header boldfont
+\renewcommand\theadalign{ll}       % table header alignment: left, cc for center, rr for right
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main_book"
+%%% End:

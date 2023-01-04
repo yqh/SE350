@@ -1,0 +1,19 @@
+\input{preemble_book_class}
+\begin{document}
+%%%%%%%%%%%%%
+%% reset chapter number to 1 for each part
+%\makeatletter
+%\@addtoreset{chapter}{part}
+%\makeatother
+%%%%%%%%%%%%%%
+\input{frontmatter}
+\input{mainmatter}
+%\input{backmatter}
+%\input{bibliography_book}
+\subimport{bib/}{bibliography_book}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

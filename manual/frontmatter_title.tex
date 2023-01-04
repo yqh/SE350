@@ -1,0 +1,92 @@
+% T I T L E   P A G E
+% -------------------
+% This file goes along with the master LaTeX file uw-ethesis.tex
+% Last updated May 27, 2009 by Stephen Carr, IST Client Services
+% The title page is counted as page `i' but we need to suppress the
+% page number.  We also don't want any headers or footers.
+\pagestyle{empty}
+\pagenumbering{roman}
+
+% The contents of the title page are specified in the "titlepage"
+% environment.
+\begin{titlepage}
+        \begin{center}
+        \vspace*{1.0cm}
+
+        \Huge
+        {\bf SE 350 Laboratory Project Manual \\
+             A Real-time Executive for \\
+                 Keil MCB1700}
+
+        \vspace*{1.0cm}
+
+        \normalsize
+        by \\
+
+        \vspace*{1.0cm}
+
+        \Large
+        Yiqing Huang \\
+        Thomas Reidemeister
+
+        \vspace*{3.0cm}
+
+        \normalsize
+        Electrical and Computer Engineering Department \\
+        University of Waterloo \\ 
+
+        \vspace*{2.0cm}
+\makeatletter
+        Waterloo, Ontario, Canada, \@date \\
+\makeatother
+        
+      
+        
+        \vspace*{1.0cm}
+
+        \copyright\ Y. Huang, and T. Reidemeister 2012-2023 \\
+        \end{center}
+\end{titlepage}
+
+% The rest of the front pages should contain no headers and be numbered using Roman numerals starting with `ii'
+\pagestyle{plain}
+\setcounter{page}{2}
+
+\cleardoublepage % Ends the current page and causes all figures and tables that have so far appeared in the input to be printed.
+% In a two-sided printing style, it also makes the next page a right-hand (odd-numbered) page, producing a blank page if necessary.
+%\newpage
+
+\cleardoublepage
+%\newpage
+
+% T A B L E   O F   C O N T E N T S
+% ---------------------------------
+\tableofcontents
+\cleardoublepage
+%\newpage
+
+% L I S T   O F   T A B L E S
+% ---------------------------
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+\cleardoublepage
+%\newpage
+
+% L I S T   O F   F I G U R E S
+% -----------------------------
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+\cleardoublepage
+%\newpage
+
+% L I S T   O F   S Y M B O L S
+% -----------------------------
+% \renewcommand{\nomname}{Nomenclature}
+% \addcontentsline{toc}{chapter}{\textbf{Nomenclature}}
+% \printglossary
+% \cleardoublepage
+% \newpage
+
+% Change page numbering back to Arabic numerals
+\pagenumbering{arabic}
+
